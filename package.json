@@ -1,0 +1,34 @@
+{
+  "name": "nikuman",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "jaxx2104 <jaxx2104@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt --spa",
+    "build": "nuxt build --spa",
+    "start": "nuxt start --spa",
+    "generate": "nuxt generate --spa",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "nuxt": "^1.0.0-rc11"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "bootstrap": "4.0.0-beta.3",
+    "date-fns": "^1.29.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint": "^4.3.0",
+    "firebase": "^4.8.1",
+    "vue-awesome": "^2.3.4",
+    "vuexfire": "^2.3.0"
+  }
+}
