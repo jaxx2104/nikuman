@@ -2,16 +2,18 @@
   <section class="input-text">
     <div class="input-group col-12">
       <input
+        :disabled="!user"
+        :placeholder="user ? 'http://i.imgur.com/ABCDEF.png' : 'Please Login'"
         class="form-control form-control-lg bg-dark text-white"
-        placeholder="http://i.imgur.com/ABCDEF.png"
         type="url"
         v-model="input"
       />
       <div class="input-group-append">
         <button
-          type="button"
-          class="btn btn-light btn-lg"
+          :disabled="!user"
           @click="addPost"
+          class="btn btn-light btn-lg"
+          type="button"
         >Submit</button>
       </div>
     </div>

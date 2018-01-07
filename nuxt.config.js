@@ -52,7 +52,18 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'kinnikuman lgtm image viewer' }
+      { hid: 'description', name: 'description', content: 'Nuxt.js + Firebase + Netlify project' },
+      {
+        property: 'og:description',
+        content: 'Nuxt.js + Firebase + Netlify project'
+      },
+      {
+        property: 'og:image',
+        content: 'https://user-images.githubusercontent.com/2681007/34653636-2bd735c6-f432-11e7-9b77-8ec76fa46286.jpeg'
+      },
+      { property: 'twitter:card', content: 'summary_large_image' },
+      { property: 'twitter:site', content: '@jaxx2104' }
+
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

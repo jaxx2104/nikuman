@@ -9,6 +9,7 @@
       <button
         @click="thumbsUp()"
         :class="isUp ? 'btn-primary' : 'btn-outline-light'"
+        :disabled="!user"
         class="btn"
         type="button"
       >
@@ -18,6 +19,7 @@
       <button
         @click="thumbsDown()"
         :class="isDown ? 'btn-primary' : 'btn-outline-light'"
+        :disabled="!user"
         class="btn"
         type="button"
       >
@@ -48,6 +50,7 @@
 
 <script>
 import { distanceInWordsToNow } from 'date-fns'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Card',
@@ -92,6 +95,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['user']),
     formatDate: function () {
       return distanceInWordsToNow(this.post.date)
     }
