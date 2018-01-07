@@ -1,10 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import firebase from '~/plugins/firebase'
+import firebase, { usersRef, postsRef } from '~/plugins/firebase'
 import { firebaseMutations, firebaseAction } from 'vuexfire'
-const db = firebase.database()
-const usersRef = db.ref('/users')
-const postsRef = db.ref('/posts')
 const provider = new firebase.auth.GoogleAuthProvider()
 
 Vue.use(Vuex)

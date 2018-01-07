@@ -15,9 +15,6 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
-body {
-  background-color: #262b30!important;
-}
 
 *, *:before, *:after {
   box-sizing: border-box;

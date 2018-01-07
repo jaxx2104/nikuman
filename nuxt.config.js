@@ -54,7 +54,7 @@ module.exports = {
     vendor: ['vue-awesome']
   },
   css: [
-    'bootstrap/dist/css/bootstrap.css'
+    '~/assets/main.scss'
   ],
   plugins: ['~plugins/awesome.js']
 }
