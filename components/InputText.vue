@@ -3,7 +3,7 @@
     <div class="input-group col-12">
       <input
         class="form-control form-control-lg bg-dark text-white"
-        placeholder="Please input"
+        placeholder="http://i.imgur.com/ABCDEF.png"
         type="url"
         v-model="input"
       />
@@ -11,7 +11,7 @@
         <button
           type="button"
           class="btn btn-secondary btn-lg"
-          @click="doPost"
+          @click="addPost"
         >OK</button>
       </div>
     </div>
@@ -32,12 +32,11 @@ export default {
     ...mapGetters(['user'])
   },
   methods: {
-    async doPost () {
-      const data = {
+    async addPost () {
+      await this.$store.dispatch('ADD_POST', {
         email: this.user.email,
         body: this.input
-      }
-      await this.$store.dispatch('ADD_POST', data)
+      })
       this.input = ''
     }
   }

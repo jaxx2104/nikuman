@@ -7,23 +7,24 @@
     />
     <div class="card-img-overlay">
       <button type="button" class="btn btn-outline-light">
-        <icon name="thumbs-o-up" />
+        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
         <span class="badge">4</span>
       </button>
       <button type="button" class="btn btn-outline-light">
-        <icon name="thumbs-o-down" />
+        <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
         <span class="badge">0</span>
       </button>
       <button type="button" class="btn btn-outline-light">
-        <icon name="clipboard" />
+        <i class="fa fa-clipboard" aria-hidden="true"></i>
         <span class="badge">copy</span>
       </button>
     </div>
     <div class="card-body">
       <p class="card-text">
         <small class="text-muted">
-
-          <strong>{{post.user.name}}</strong> updated {{formatDate}} ago</small>
+          <strong v-if="post.user">{{post.user.name}}</strong>
+          updated {{formatDate}} ago
+        </small>
       </p>
     </div>
   </div>
@@ -68,11 +69,5 @@ img {
 
 .card-img-overlay:hover {
   opacity: 1;
-}
-
-.card .btn svg {
-  margin-right: 4px;
-  vertical-align: middle;
-  text-anchor: middle;
 }
 </style>

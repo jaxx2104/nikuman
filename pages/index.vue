@@ -7,16 +7,17 @@
         <Card v-for="post in posts" :key="post['.key']" :post="post"/>
       </div>
     </div>
-    <div class="loading" v-else>Loading</div>
+    <Loading v-else />
   </div>
 </template>
 
 <script>
-import Card from '~/components/Card'
-import Navi from '~/components/Navi'
-import InputText from '~/components/InputText'
-import auth from '~/plugins/auth'
 import { mapGetters } from 'vuex'
+import auth from '~/plugins/auth'
+import Card from '~/components/Card'
+import InputText from '~/components/InputText'
+import Loading from '~/components/Loading'
+import Navi from '~/components/Navi'
 
 export default {
   data () {
@@ -27,6 +28,7 @@ export default {
   components: {
     Card,
     InputText,
+    Loading,
     Navi
   },
   async mounted () {

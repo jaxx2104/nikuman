@@ -1,33 +1,6 @@
 const nodeExternals = require('webpack-node-externals')
 module.exports = {
   /*
-  ** Headers of the page
-  */
-  head: {
-    title: 'nikuman',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
-  },
-  /*
-  ** Customize the progress bar color
-  */
-  loading: { color: '#3B8070' },
-  env: {
-    APIKEY: process.env.APIKEY,
-    AUTHDOMAIN: process.env.AUTHDOMAIN,
-    DATABASEURL: process.env.DATABASEURL,
-    PROJECTID: process.env.PROJECTID,
-    STORAGEBUCKET: process.env.STORAGEBUCKET,
-    MESSAGINGSENDERID: process.env.MESSAGINGSENDERID
-  },
-
-  /*
   ** Build configuration
   */
   build: {
@@ -51,10 +24,66 @@ module.exports = {
         ]
       }
     },
-    vendor: ['vue-awesome']
+    vendor: [
+      'firebase',
+      'vuexfire'
+    ]
+  },
+  cache: {
+    max: 1000,
+    maxAge: 900000
   },
   css: [
     '~/assets/main.scss'
   ],
-  plugins: ['~plugins/awesome.js']
+  env: {
+    APIKEY: process.env.APIKEY,
+    AUTHDOMAIN: process.env.AUTHDOMAIN,
+    DATABASEURL: process.env.DATABASEURL,
+    PROJECTID: process.env.PROJECTID,
+    STORAGEBUCKET: process.env.STORAGEBUCKET,
+    MESSAGINGSENDERID: process.env.MESSAGINGSENDERID
+  },
+  /*
+  ** Headers of the page
+  */
+  head: {
+    title: 'Nikuman',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'dns-prefetch', href: 'https://nikuman.netlify.com' }
+    ]
+  },
+  /*
+  ** Customize the progress bar color
+  */
+  loading: { color: 'white' },
+  loadingIndicator: {
+    name: 'circle',
+    color: 'rebeccapurple',
+    background: 'white'
+  },
+  manifest: {
+    name: 'Nikuman',
+    theme_color: 'rebeccapurple'
+  },
+  modules: [
+    '@nuxtjs/font-awesome',
+    '@nuxtjs/pwa'
+  ],
+  render: {
+    static: {
+      maxAge: '1y',
+      setHeaders (res, path) {
+        if (path.includes('sw.js')) {
+          res.setHeader('Cache-Control', 'public, max-age=0')
+        }
+      }
+    }
+  }
 }

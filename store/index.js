@@ -60,6 +60,9 @@ const createStore = () => {
         bindFirebaseRef('posts', postsRef)
       }),
       ADD_POST: firebaseAction((ctx, { email, body }) => {
+        if (body.trim() === '') {
+          return
+        }
         postsRef.push({
           date: firebase.database.ServerValue.TIMESTAMP,
           from: email,
