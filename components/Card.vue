@@ -6,17 +6,33 @@
       :title="post.body"
     />
     <div class="card-img-overlay">
-      <button type="button" class="btn btn-outline-light">
+      <button
+        @click="thumbsUp()"
+        :class="isUp ? 'btn-primary' : 'btn-outline-light'"
+        class="btn"
+        type="button"
+      >
         <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-        <span class="badge">4</span>
+        <span class="badge">{{ up }}</span>
       </button>
-      <button type="button" class="btn btn-outline-light">
+      <button
+        @click="thumbsDown()"
+        :class="isDown ? 'btn-primary' : 'btn-outline-light'"
+        class="btn"
+        type="button"
+      >
         <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-        <span class="badge">0</span>
+        <span class="badge">{{ down }}</span>
       </button>
-      <button type="button" class="btn btn-outline-light">
-        <i class="fa fa-clipboard" aria-hidden="true"></i>
-        <span class="badge">copy</span>
+      <button
+        @click="copyUrl()"
+        :class="isCopy ? 'btn-primary' : 'btn-outline-light'"
+        class="btn"
+        type="button"
+        v-clipboard="post.body"
+      >
+        <i class="fa fa-clipboard" aria-hidden="true" />
+        <span class="badge">{{ isCopy ? 'Copied!' : 'Copy' }}</span>
       </button>
     </div>
     <div class="card-body">
@@ -37,16 +53,44 @@ export default {
   name: 'Card',
   data () {
     return {
-      src: ''
+      isCopy: false,
+      isUp: false,
+      isDown: false,
+      up: 0,
+      down: 0
     }
   },
   props: {
     post: Object
   },
+  methods: {
+    copyUrl: function () {
+      this.isCopy = true
+      setTimeout(() => {
+        this.isCopy = false
+      }, 1000)
+    },
+    thumbsUp: function () {
+      this.up++
+      this.isUp = true
+      setTimeout(() => {
+        this.isUp = false
+      }, 1000)
+    },
+    thumbsDown: function () {
+      this.down++
+      this.isDown = true
+      setTimeout(() => {
+        this.isDown = false
+      }, 1000)
+    }
+  },
   computed: {
     formatDate: function () {
       return distanceInWordsToNow(this.post.date)
     }
+  },
+  mounted () {
   }
 }
 </script>

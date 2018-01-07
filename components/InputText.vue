@@ -10,9 +10,9 @@
       <div class="input-group-append">
         <button
           type="button"
-          class="btn btn-secondary btn-lg"
+          class="btn btn-light btn-lg"
           @click="addPost"
-        >OK</button>
+        >Submit</button>
       </div>
     </div>
   </section>

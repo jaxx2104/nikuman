@@ -33,6 +33,7 @@
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
     "vue-awesome": "^2.3.4",
+    "vue-clipboards": "^1.2.1",
     "vuexfire": "^2.3.0"
   }
 }

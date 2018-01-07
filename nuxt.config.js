@@ -76,6 +76,9 @@ module.exports = {
     '@nuxtjs/font-awesome',
     '@nuxtjs/pwa'
   ],
+  plugins: [
+    '~/plugins/clipboard.js'
+  ],
   render: {
     static: {
       maxAge: '1y',
