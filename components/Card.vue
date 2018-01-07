@@ -1,5 +1,5 @@
 <template>
-  <div class="card bg-dark text-white">
+  <div class="card bg-dark text-white" ontouchstart="">
     <img
       class="card-img-top"
       :src="post.body"
@@ -13,7 +13,7 @@
         type="button"
       >
         <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-        <span class="badge">{{ up }}</span>
+        <span class="badge">{{ post.thumbsup }}</span>
       </button>
       <button
         @click="thumbsDown()"
@@ -22,7 +22,7 @@
         type="button"
       >
         <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-        <span class="badge">{{ down }}</span>
+        <span class="badge">{{ post.thumbsdown }}</span>
       </button>
       <button
         @click="copyUrl()"
@@ -55,9 +55,7 @@ export default {
     return {
       isCopy: false,
       isUp: false,
-      isDown: false,
-      up: 0,
-      down: 0
+      isDown: false
     }
   },
   props: {
@@ -70,15 +68,23 @@ export default {
         this.isCopy = false
       }, 1000)
     },
-    thumbsUp: function () {
-      this.up++
+    async thumbsUp () {
+      this.post.thumbsup++
+      await this.$store.dispatch('THUMBS_UP', {
+        id: this.post['.key'],
+        thumbsup: this.post.thumbsup
+      })
       this.isUp = true
       setTimeout(() => {
         this.isUp = false
       }, 1000)
     },
-    thumbsDown: function () {
-      this.down++
+    async thumbsDown () {
+      this.post.thumbsdown++
+      await this.$store.dispatch('THUMBS_DOWN', {
+        id: this.post['.key'],
+        thumbsdown: this.post.thumbsdown
+      })
       this.isDown = true
       setTimeout(() => {
         this.isDown = false

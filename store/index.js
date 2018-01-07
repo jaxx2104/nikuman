@@ -40,7 +40,7 @@ const createStore = () => {
       ...firebaseMutations
     },
     actions: {
-      async SET_CREDENTIAL ({commit}, { user }) {
+      async SET_CREDENTIAL ({ commit }, { user }) {
         if (!user) return
         await usersRef.child(user.email.replace('@', '_at_').replace(/\./g, '_dot_')).set({
           name: user.displayName,
@@ -49,9 +49,15 @@ const createStore = () => {
         })
         commit('setCredential', { user })
       },
-      async INIT_SINGLE ({commit}, { id }) {
+      async INIT_SINGLE ({ commit }, { id }) {
         const snapshot = await postsRef.child(id).once('value')
         commit('savePost', { post: snapshot.val() })
+      },
+      THUMBS_DOWN ({ commit }, { id, thumbsdown }) {
+        postsRef.child(id).update({ thumbsdown })
+      },
+      THUMBS_UP ({ commit }, { id, thumbsup }) {
+        postsRef.child(id).update({ thumbsup })
       },
       INIT_USERS: firebaseAction(({ bindFirebaseRef }) => {
         bindFirebaseRef('users', usersRef)
@@ -64,9 +70,11 @@ const createStore = () => {
           return
         }
         postsRef.push({
+          body,
           date: firebase.database.ServerValue.TIMESTAMP,
           from: email,
-          body
+          thumbsdown: 0,
+          thumbsup: 0
         })
       }),
       callAuth () {
