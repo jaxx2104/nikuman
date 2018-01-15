@@ -5,12 +5,12 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: 'standard',
+  extends: ['prettier'],
   // required to lint *.vue files
-  plugins: [
-    'html'
-  ],
+  plugins: ['html', 'prettier'],
   // add your custom rules here
-  rules: {},
+  rules: {
+    'prettier/prettier': ['error']
+  },
   globals: {}
 }

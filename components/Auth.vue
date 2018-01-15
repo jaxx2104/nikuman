@@ -21,10 +21,8 @@
 import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'Auth',
-  data () {
-    return {
-      text: 'Login'
-    }
+  data() {
+    return { text: 'Login' }
   },
   computed: {
     ...mapGetters(['user'])
@@ -41,7 +39,4 @@ export default {
   height: 48px;
   margin: 0 auto;
 }
-
-
-
 </style>

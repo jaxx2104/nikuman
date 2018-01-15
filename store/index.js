@@ -16,56 +16,33 @@ const createStore = () => {
     },
     getters: {
       posts: state => {
-        return state.posts.map((post) => {
-          post.user = state.users.find((user) => user.email === post.from)
-          return post
-        }).reverse()
+        return state.posts
+          .map(post => {
+            post.user = state.users.find(user => user.email === post.from)
+            return post
+          })
+          .reverse()
       },
       post: state => {
         const post = state.post
         if (!post) return null
-        post.user = state.users.find((user) => user.email === post.from)
+        post.user = state.users.find(user => user.email === post.from)
         return post
       },
       users: state => state.users,
       user: state => state.user
     },
     mutations: {
-      setCredential (state, { user }) {
+      saveCredential(state, { user }) {
         state.user = user
       },
-      savePost (state, { post }) {
+      savePost(state, { post }) {
         state.post = post
       },
       ...firebaseMutations
     },
     actions: {
-      async SET_CREDENTIAL ({ commit }, { user }) {
-        if (!user) return
-        await usersRef.child(user.email.replace('@', '_at_').replace(/\./g, '_dot_')).set({
-          name: user.displayName,
-          email: user.email,
-          icon: user.photoURL
-        })
-        commit('setCredential', { user })
-      },
-      async INIT_SINGLE ({ commit }, { id }) {
-        const snapshot = await postsRef.child(id).once('value')
-        commit('savePost', { post: snapshot.val() })
-      },
-      THUMBS_DOWN ({ commit }, { id, thumbsdown }) {
-        postsRef.child(id).update({ thumbsdown })
-      },
-      THUMBS_UP ({ commit }, { id, thumbsup }) {
-        postsRef.child(id).update({ thumbsup })
-      },
-      INIT_USERS: firebaseAction(({ bindFirebaseRef }) => {
-        bindFirebaseRef('users', usersRef)
-      }),
-      INIT_POSTS: firebaseAction(({ bindFirebaseRef }) => {
-        bindFirebaseRef('posts', postsRef)
-      }),
-      ADD_POST: firebaseAction((ctx, { email, body }) => {
+      addPost: firebaseAction((ctx, { email, body }) => {
         if (body.trim() === '') {
           return
         }
@@ -77,8 +54,35 @@ const createStore = () => {
           thumbsup: 0
         })
       }),
-      callAuth () {
+      callAuth: () => {
         firebase.auth().signInWithRedirect(provider)
+      },
+      initSingle: async ({ commit }, { id }) => {
+        const snapshot = await postsRef.child(id).once('value')
+        commit('savePost', { post: snapshot.val() })
+      },
+      initUsers: firebaseAction(({ bindFirebaseRef }) => {
+        bindFirebaseRef('users', usersRef)
+      }),
+      initPosts: firebaseAction(({ bindFirebaseRef }) => {
+        bindFirebaseRef('posts', postsRef)
+      }),
+      setCredential: async ({ commit }, { user }) => {
+        if (!user) return
+        await usersRef
+          .child(user.email.replace('@', '_at_').replace(/\./g, '_dot_'))
+          .set({
+            name: user.displayName,
+            email: user.email,
+            icon: user.photoURL
+          })
+        commit('saveCredential', { user })
+      },
+      thumbsDown({ commit }, { id, thumbsdown }) {
+        postsRef.child(id).update({ thumbsdown })
+      },
+      thumbsUp({ commit }, { id, thumbsup }) {
+        postsRef.child(id).update({ thumbsup })
       }
     }
   })

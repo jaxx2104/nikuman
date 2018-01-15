@@ -9,8 +9,14 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "lint": "prettier **/*.{css,js,json,scss,vue}",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{css,js,json,scss,vue}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "@nuxtjs/font-awesome": "^1.0.3",
@@ -22,17 +28,16 @@
     "bootstrap": "4.0.0-beta.3",
     "date-fns": "^1.29.0",
     "eslint": "^4.3.0",
-    "eslint-config-standard": "^10.2.1",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-loader": "^1.9.0",
-    "eslint-plugin-html": "^3.1.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-html": "^4.0.1",
+    "eslint-plugin-prettier": "^2.4.0",
     "firebase": "^4.8.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
     "node-sass": "^4.7.2",
+    "prettier": "^1.10.2",
     "sass-loader": "^6.0.6",
-    "vue-awesome": "^2.3.4",
     "vue-clipboards": "^1.2.1",
     "vuexfire": "^2.3.0"
   }

@@ -1,9 +1,9 @@
 // Your variable overrides
 $body-bg: #222;
 $theme-colors: (
-  "primary": rebeccapurple,
-  "danger": magenta
+  'primary': rebeccapurple,
+  'danger': magenta
 );
 
 // Bootstrap and its default variables
-@import "node_modules/bootstrap/scss/bootstrap";
+@import 'node_modules/bootstrap/scss/bootstrap';

@@ -17,7 +17,7 @@ export default {
   components: {
     Auth
   },
-  data () {
+  data() {
     return {
       title: 'Nikuman'
     }

@@ -1,51 +1,57 @@
 <template>
-  <div class="card bg-dark text-white" ontouchstart="">
-    <img
-      class="card-img-top"
-      :src="post.body"
-      :title="post.body"
-    />
-    <div class="card-img-overlay">
-      <button
-        @click="thumbsUp()"
-        :class="isUp ? 'btn-primary' : 'btn-outline-light'"
-        :disabled="!user"
-        class="btn"
-        type="button"
-      >
-        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-        <span class="badge">{{ post.thumbsup }}</span>
-      </button>
-      <button
-        @click="thumbsDown()"
-        :class="isDown ? 'btn-primary' : 'btn-outline-light'"
-        :disabled="!user"
-        class="btn"
-        type="button"
-      >
-        <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-        <span class="badge">{{ post.thumbsdown }}</span>
-      </button>
-      <button
-        @click="copyUrl()"
-        :class="isCopy ? 'btn-primary' : 'btn-outline-light'"
-        class="btn"
-        type="button"
-        v-clipboard="post.body"
-      >
-        <i class="fa fa-clipboard" aria-hidden="true" />
-        <span class="badge">{{ isCopy ? 'Copied!' : 'Copy' }}</span>
-      </button>
+  <transition name="fade">
+    <div
+      class="card bg-dark text-white"
+      ontouchstart=""
+      v-show="isShow"
+    >
+      <img
+        :src="post.body"
+        :title="post.body"
+        class="card-img-top"
+      />
+      <div class="card-img-overlay">
+        <button
+          @click="thumbsUp()"
+          :class="isUp ? 'btn-primary' : 'btn-outline-light'"
+          :disabled="!user"
+          class="btn"
+          type="button"
+        >
+          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+          <span class="badge">{{ post.thumbsup }}</span>
+        </button>
+        <button
+          @click="thumbsDown()"
+          :class="isDown ? 'btn-primary' : 'btn-outline-light'"
+          :disabled="!user"
+          class="btn"
+          type="button"
+        >
+          <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+          <span class="badge">{{ post.thumbsdown }}</span>
+        </button>
+        <button
+          @click="copyUrl()"
+          :class="isCopy ? 'btn-primary' : 'btn-outline-light'"
+          class="btn"
+          type="button"
+          v-clipboard="post.body"
+        >
+          <i class="fa fa-clipboard" aria-hidden="true" />
+          <span class="badge">{{ isCopy ? 'Copied!' : 'Copy' }}</span>
+        </button>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          <small class="text-muted">
+            <strong v-if="post.user">{{post.user.name}}</strong>
+            updated {{formatDate}} ago
+          </small>
+        </p>
+      </div>
     </div>
-    <div class="card-body">
-      <p class="card-text">
-        <small class="text-muted">
-          <strong v-if="post.user">{{post.user.name}}</strong>
-          updated {{formatDate}} ago
-        </small>
-      </p>
-    </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -54,8 +60,9 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'Card',
-  data () {
+  data() {
     return {
+      isShow: false,
       isCopy: false,
       isUp: false,
       isDown: false
@@ -65,15 +72,15 @@ export default {
     post: Object
   },
   methods: {
-    copyUrl: function () {
+    copyUrl: function() {
       this.isCopy = true
       setTimeout(() => {
         this.isCopy = false
       }, 1000)
     },
-    async thumbsUp () {
+    thumbsUp() {
       this.post.thumbsup++
-      await this.$store.dispatch('THUMBS_UP', {
+      this.$store.dispatch('thumbsUp', {
         id: this.post['.key'],
         thumbsup: this.post.thumbsup
       })
@@ -82,9 +89,9 @@ export default {
         this.isUp = false
       }, 1000)
     },
-    async thumbsDown () {
+    thumbsDown() {
       this.post.thumbsdown++
-      await this.$store.dispatch('THUMBS_DOWN', {
+      this.$store.dispatch('thumbsDown', {
         id: this.post['.key'],
         thumbsdown: this.post.thumbsdown
       })
@@ -92,22 +99,38 @@ export default {
       setTimeout(() => {
         this.isDown = false
       }, 1000)
+    },
+    handleScroll() {
+      if (!this.isShow) {
+        const top = this.$el.getBoundingClientRect().top
+        console.log(top, window.innerHeight)
+        this.isShow = top < window.innerHeight + 100
+      }
     }
   },
   computed: {
     ...mapGetters(['user']),
-    formatDate: function () {
+    formatDate: function() {
       return distanceInWordsToNow(this.post.date)
     }
   },
-  mounted () {
+  created() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+  mounted() {
+    setTimeout(() => {
+      this.handleScroll()
+    }, 8000)
   }
 }
 </script>
 
 <style scoped>
 img {
-  transition: .5s ease;
+  transition: 0.5s ease;
   backface-visibility: hidden;
 }
 .card:hover img {
@@ -123,5 +146,15 @@ img {
 
 .card-img-overlay:hover {
   opacity: 1;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

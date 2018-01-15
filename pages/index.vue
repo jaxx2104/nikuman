@@ -3,9 +3,13 @@
     <Navi/>
     <InputText/>
     <div class="col-12" v-if="isLoaded">
-      <div class="card-columns" >
-        <Card v-for="post in posts" :key="post['.key']" :post="post"/>
-      </div>
+        <div class="card-columns">
+          <Card
+            :key="post['.key']"
+            :post="post"
+            v-for="post in posts"
+          />
+        </div>
     </div>
     <Loading v-else />
   </div>
@@ -20,7 +24,7 @@ import Loading from '~/components/Loading'
 import Navi from '~/components/Navi'
 
 export default {
-  data () {
+  data() {
     return {
       isLoaded: false
     }
@@ -31,16 +35,18 @@ export default {
     Loading,
     Navi
   },
-  async mounted () {
+  async mounted() {
     if (!process.browser) {
       return
     }
     let user
     if (!this.user) user = await auth()
     const promiseList = [
-      this.user ? Promise.resolve() : this.$store.dispatch('SET_CREDENTIAL', { user: user || null }),
-      this.posts.length ? Promise.resolve() : this.$store.dispatch('INIT_POSTS'),
-      this.users.length ? Promise.resolve() : this.$store.dispatch('INIT_USERS')
+      this.user
+        ? Promise.resolve()
+        : this.$store.dispatch('setCredential', { user: user || null }),
+      this.posts.length ? Promise.resolve() : this.$store.dispatch('initPosts'),
+      this.users.length ? Promise.resolve() : this.$store.dispatch('initUsers')
     ]
     await Promise.all(promiseList)
     this.isLoaded = true
@@ -52,6 +58,17 @@ export default {
 </script>
 
 <style>
+.list-enter-active,
+.list-leave-active {
+  transition: all 1s;
+}
 
+.list-enter,
+.list-leave-to {
+  opacity: 0;
+}
 
+.list-move {
+  transition: transform 1s;
+}
 </style>

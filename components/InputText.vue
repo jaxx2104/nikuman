@@ -25,7 +25,7 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'InputText',
-  data () {
+  data() {
     return {
       input: ''
     }
@@ -34,15 +34,14 @@ export default {
     ...mapGetters(['user'])
   },
   methods: {
-    async addPost () {
-      await this.$store.dispatch('ADD_POST', {
+    async addPost() {
+      await this.$store.dispatch('addPost', {
         email: this.user.email,
         body: this.input
       })
       this.input = ''
     }
   }
-
 }
 </script>
 
