@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="brand">
-      <h1>{{title}}</h1>
+      <h1>{{ title }}</h1>
     </div>
     <div class="menu">
       <Auth/>
@@ -33,7 +33,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0.5rem;
 }
 .brand {
   padding: 1.45rem 1.0875rem;

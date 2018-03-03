@@ -14,5 +14,4 @@ if (!firebase.apps.length) {
 const db = firebase.database()
 export const usersRef = db.ref('/users')
 export const postsRef = db.ref('/posts')
-
 export default firebase

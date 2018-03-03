@@ -9,7 +9,8 @@ export default async function({ store }) {
     } catch (e) {
       console.log(e)
     }
-    await store.dispatch('setCredential', { user: user || null })
+    console.log(user)
+    await store.account.dispatch('save', { user: user || null })
     await store.dispatch('initPosts')
   }
 }

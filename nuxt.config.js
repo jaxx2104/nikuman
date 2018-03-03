@@ -6,8 +6,8 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend(config, ctx) {
-      if (ctx.dev && ctx.isClient) {
+    extend(config, { isDev, isClient }) {
+      if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
@@ -22,7 +22,6 @@ module.exports = {
     max: 1000,
     maxAge: 900000
   },
-  css: ['~/assets/main.scss'],
   env: {
     APIKEY: process.env.APIKEY,
     AUTHDOMAIN: process.env.AUTHDOMAIN,
@@ -74,8 +73,7 @@ module.exports = {
     name: 'Nikuman',
     theme_color: 'rebeccapurple'
   },
-  modules: ['@nuxtjs/font-awesome', '@nuxtjs/pwa'],
-  plugins: ['~/plugins/clipboard.js'],
+  modules: ['@nuxtjs/pwa'],
   render: {
     static: {
       maxAge: '1y',
