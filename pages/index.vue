@@ -2,14 +2,15 @@
   <div>
     <Navi/>
     <InputText/>
-    <div class="col-12" v-if="isLoaded">
-        <div class="card-columns">
-          <Card
-            :key="post['.key']"
-            :post="post"
-            v-for="post in posts"
-          />
-        </div>
+    <div
+      v-if="isLoaded"
+      class="card-columns"
+    >
+      <Card
+        v-for="post in posts"
+        :key="post['.key']"
+        :post="post"
+      />
     </div>
     <Loading v-else />
   </div>
@@ -24,51 +25,56 @@ import Loading from '~/components/Loading'
 import Navi from '~/components/Navi'
 
 export default {
-  data() {
-    return {
-      isLoaded: false
-    }
-  },
   components: {
     Card,
     InputText,
     Loading,
     Navi
   },
+  data() {
+    return {
+      isLoaded: false
+    }
+  },
+  computed: {
+    ...mapGetters(['user', 'users', 'posts', 'account'])
+  },
   async mounted() {
     if (!process.browser) {
       return
     }
-    let user
-    if (!this.user) user = await auth()
+
+    const account = this.account.email ? this.account : await auth()
     const promiseList = [
-      this.user
+      this.account.email
         ? Promise.resolve()
-        : this.$store.dispatch('setCredential', { user: user || null }),
+        : this.$store.dispatch('initAccount', { account: account } || null),
       this.posts.length ? Promise.resolve() : this.$store.dispatch('initPosts'),
       this.users.length ? Promise.resolve() : this.$store.dispatch('initUsers')
     ]
+
     await Promise.all(promiseList)
     this.isLoaded = true
-  },
-  computed: {
-    ...mapGetters(['user', 'users', 'posts'])
   }
 }
 </script>
 
-<style>
-.list-enter-active,
-.list-leave-active {
-  transition: all 1s;
+<style scoped>
+.card-columns {
+  column-count: 4;
+  column-gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
 }
 
-.list-enter,
-.list-leave-to {
-  opacity: 0;
+@media (min-width: 480px) and (max-width: 920px) {
+  .card-columns {
+    column-count: 3;
+  }
 }
 
-.list-move {
-  transition: transform 1s;
+@media (max-width: 480px) {
+  .card-columns {
+    column-count: 1;
+  }
 }
 </style>

@@ -1,16 +1,12 @@
 module.exports = {
+  env: { browser: true, node: true },
   root: true,
-  parser: 'babel-eslint',
-  env: {
-    browser: true,
-    node: true
-  },
-  extends: ['prettier'],
-  // required to lint *.vue files
-  plugins: ['html', 'prettier'],
-  // add your custom rules here
-  rules: {
-    'prettier/prettier': ['error']
-  },
-  globals: {}
+  extends: [
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'plugin:vue/recommended'
+  ],
+  parserOptions: {
+    ecmaVersion: 2017
+  }
 }

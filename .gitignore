@@ -12,3 +12,5 @@ dist
 
 # sw.js
 static/sw.js
+
+.env
