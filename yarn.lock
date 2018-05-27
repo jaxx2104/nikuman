@@ -2403,7 +2403,7 @@ content-type@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
 
-convert-source-map@^1.2.0, convert-source-map@^1.5.0:
+convert-source-map@^1.5.0:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.5.1.tgz#b8278097b9bc229365de5c62cf5fcaed8b5599e5"
 
@@ -2638,7 +2638,7 @@ cssesc@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-0.1.0.tgz#c814903e45623371a0477b40109aaafbeeaddbb4"
 
-cssnano@^3.10.0, cssnano@^3.3.2:
+cssnano@^3.10.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-3.10.0.tgz#4f38f6cea2b9b17fa01490f23f1dc68ea65c1c38"
   dependencies:
@@ -4124,6 +4124,10 @@ he@1.1.x, he@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
+highlight.js@^9.12.0:
+  version "9.12.0"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.12.0.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
+
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -5366,13 +5370,6 @@ lower-case@^1.1.1:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/lower-case/-/lower-case-1.1.4.tgz#9a2cabd1b9e8e0ae993a4bf7d5875c39c42e8eac"
 
-lru-cache@^4.0.0:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.1.tgz#622e32e82488b49279114a4f9ecf45e7cd6bba55"
-  dependencies:
-    pseudomap "^1.0.2"
-    yallist "^2.1.2"
-
 lru-cache@^4.0.1, lru-cache@^4.1.1:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.2.tgz#45234b2e6e2f2b33da125624c4664929a0224c3f"
@@ -5407,7 +5404,7 @@ markdown-loader@^2.0.2:
     loader-utils "^1.1.0"
     marked "^0.3.9"
 
-marked@^0.3.9:
+marked@^0.3.19, marked@^0.3.9:
   version "0.3.19"
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.19.tgz#5d47f709c4c9fc3c216b6d46127280f40b39d790"
 
@@ -8023,11 +8020,13 @@ stealthy-require@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
 
-storybook-addon-vue-info@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/storybook-addon-vue-info/-/storybook-addon-vue-info-0.2.0.tgz#31809af5d02dbaa722307beb53abad21f298c8d3"
+storybook-addon-vue-info@^0.4.0:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/storybook-addon-vue-info/-/storybook-addon-vue-info-0.4.2.tgz#a7630fd79cb0acb42dac251786b7bbc0646b92cc"
   dependencies:
-    vueify "^9.4.1"
+    dedent "^0.7.0"
+    highlight.js "^9.12.0"
+    marked "^0.3.19"
 
 stream-browserify@^2.0.1:
   version "2.0.1"
@@ -8686,7 +8685,7 @@ vue-eslint-parser@^2.0.3:
     esquery "^1.0.0"
     lodash "^4.17.4"
 
-vue-hot-reload-api@^2.0.1, vue-hot-reload-api@^2.2.0:
+vue-hot-reload-api@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.0.tgz#97976142405d13d8efae154749e88c4e358cf926"
 
@@ -8740,39 +8739,20 @@ vue-style-loader@^3.0.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-template-compiler@^2.0.0-alpha.8, vue-template-compiler@^2.5.13:
+vue-template-compiler@^2.5.13:
   version "2.5.13"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.13.tgz#12a2aa0ecd6158ac5e5f14d294b0993f399c3d38"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
 
-vue-template-es2015-compiler@^1.2.2, vue-template-es2015-compiler@^1.6.0:
+vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
 
 vue@^2.5.13:
   version "2.5.13"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.13.tgz#95bd31e20efcf7a7f39239c9aa6787ce8cf578e1"
-
-vueify@^9.4.1:
-  version "9.4.1"
-  resolved "https://registry.yarnpkg.com/vueify/-/vueify-9.4.1.tgz#d29a9775a33c4b8a8601e186a85da2ab800ca0d6"
-  dependencies:
-    chalk "^1.1.1"
-    convert-source-map "^1.2.0"
-    cssnano "^3.3.2"
-    hash-sum "^1.0.2"
-    json5 "^0.5.1"
-    lru-cache "^4.0.0"
-    object-assign "^4.0.1"
-    postcss "^5.0.10"
-    postcss-selector-parser "^2.0.0"
-    source-map "^0.5.6"
-    through "^2.3.6"
-    vue-hot-reload-api "^2.0.1"
-    vue-template-compiler "^2.0.0-alpha.8"
-    vue-template-es2015-compiler "^1.2.2"
 
 vuex@^3.0.1:
   version "3.0.1"
