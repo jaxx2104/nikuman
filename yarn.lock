@@ -7642,9 +7642,9 @@ statuses@~1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.4.0.tgz#bb73d446da2796106efcc1b601a253d6c46bd087"
 
-storybook-addon-vue-info@0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/storybook-addon-vue-info/-/storybook-addon-vue-info-0.4.2.tgz#a7630fd79cb0acb42dac251786b7bbc0646b92cc"
+storybook-addon-vue-info@0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/storybook-addon-vue-info/-/storybook-addon-vue-info-0.4.3.tgz#0f4ccb20c5411cd410cc9c0a8e5b5f95f5b480c4"
   dependencies:
     dedent "^0.7.0"
     highlight.js "^9.12.0"
