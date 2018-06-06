@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "2.0.8",
-    "nuxt": "1.4.0"
+    "nuxt": "1.4.1"
   },
   "devDependencies": {
     "@storybook/vue": "3.4.6",
