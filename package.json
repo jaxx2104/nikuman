@@ -22,7 +22,7 @@
   "dependencies": {
     "@nuxtjs/pwa": "2.0.8",
     "grpc": "1.13.1",
-    "nuxt": "1.4.1"
+    "nuxt": "1.4.2"
   },
   "devDependencies": {
     "@storybook/vue": "3.4.8",
