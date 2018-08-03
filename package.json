@@ -25,7 +25,7 @@
     "nuxt": "1.4.1"
   },
   "devDependencies": {
-    "@storybook/vue": "3.4.8",
+    "@storybook/vue": "3.4.10",
     "babel-eslint": "8.2.6",
     "babel-plugin-root-import": "6.1.0",
     "babel-polyfill": "6.26.0",
