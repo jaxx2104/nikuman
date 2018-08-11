@@ -1,3 +1,6 @@
-.component-area {
-  background-color: #333;
+.info-content {
+  background-color: #555;
+  border-radius: 4px;
+  border: 1px solid #333;
+  padding: 20px;
 }
