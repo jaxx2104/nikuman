@@ -5,8 +5,8 @@
       ontouchstart=""
     >
       <img
-        :src="post.body || '/assets/img/post.jpeg'"
-        :title="post.body || 'title'"
+        :src="image"
+        :title="image"
       >
       <CardOverray>
         <Button
@@ -21,7 +21,11 @@
         />
         <Button
           :action="copyUrl"
-          :body="copyText"
+          :body="copyUrlLabel"
+        />
+        <Button
+          :action="copyMarkdown"
+          :body="copyLgtmLabel"
         />
       </CardOverray>
       <CardBody>
@@ -34,7 +38,7 @@
 <script>
 import { distanceInWordsToNow } from 'date-fns'
 import { mapGetters } from 'vuex'
-import copy from 'copy-to-clipboard'
+import copyToClipboard from 'copy-to-clipboard'
 import styled from 'vue-styled-components'
 import Button from '~/components/Button'
 
@@ -81,6 +85,7 @@ const CardOverray = styled.div`
     opacity: 1;
   }
 `
+
 export default {
   name: 'Card',
   components: {
@@ -100,15 +105,19 @@ export default {
   data() {
     return {
       isShow: true,
-      copyText: 'Copy'
+      copyUrlLabel: 'URL',
+      copyLgtmLabel: 'LGTM'
     }
   },
   computed: {
-    ...mapGetters(['account']),
+    ...mapGetters(['users', 'account']),
+    image() {
+      return this.post.body || 'post.jpeg'
+    },
     author() {
       /* eslint-disable no-console */
-      console.log(this.post.user)
-      return this.post.user ? this.post.user.name : '*'
+      const user = this.users.find(({ email }) => email === this.post.from)
+      return user ? user.name : '*'
     },
     authored() {
       const date = distanceInWordsToNow(this.post.date)
@@ -117,13 +126,17 @@ export default {
   },
   methods: {
     copyUrl() {
-      copy(this.post.body)
-      this.copyText = 'Copied!'
-      setTimeout(() => {
-        this.copyText = 'Copy'
-      }, 1000)
+      copyToClipboard(this.post.body)
+      this.copyUrlLabel = 'Copied!'
+      setTimeout(() => (this.copyUrlLabel = 'URL'), 1000)
+    },
+    copyMarkdown() {
+      copyToClipboard(`![LGTM](${this.post.body})`)
+      this.copyLgtmLabel = 'Copied!'
+      setTimeout(() => (this.copyLgtmLabel = 'LGTM'), 1000)
     },
     thumbsUp() {
+      console.log(this.post.thumbsup)
       this.post.thumbsup++
       this.$store.dispatch('thumbsUp', {
         id: this.post['.key'],

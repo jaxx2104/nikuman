@@ -1,10 +1,11 @@
+import { firebaseMutations, firebaseAction } from 'vuexfire'
+import orderBy from 'lodash/orderBy'
 import Vue from 'vue'
 import Vuex from 'vuex'
-import Account from './Account'
-import Post from './Post'
 
 import { usersRef, postsRef } from '~/plugins/firebase'
-import { firebaseMutations, firebaseAction } from 'vuexfire'
+import account from './account'
+import post from './post'
 
 Vue.use(Vuex)
 
@@ -15,14 +16,7 @@ const createStore = () => {
       posts: []
     },
     getters: {
-      posts: state => {
-        return state.posts
-          .map(post => {
-            post.user = state.users.find(user => user.email === post.from)
-            return post
-          })
-          .reverse()
-      },
+      posts: state => orderBy(state.posts, 'date', 'desc'),
       users: state => state.users
     },
     mutations: {
@@ -37,8 +31,8 @@ const createStore = () => {
       })
     },
     modules: {
-      account: Account,
-      post: Post
+      account,
+      post
     }
   })
 }

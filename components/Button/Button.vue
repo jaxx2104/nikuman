@@ -3,7 +3,7 @@
     :class="[isClick ? 'selected' : '', size]"
     @click="onClick()"
   >
-    {{ prefix }}{{ body }}
+    {{ prefix }} {{ body }}
   </StyledButton>
 </template>
 
@@ -56,7 +56,6 @@ export default {
   components: {
     StyledButton
   },
-
   props: {
     action: { type: Function, default: () => {} },
     body: { type: [String, Number], default: '0' },

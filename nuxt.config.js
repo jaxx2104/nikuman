@@ -59,7 +59,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'dns-prefetch', href: 'https://nikuman.netlify.com' }
+      { rel: 'dns-prefetch', href: 'https://nikuman.jaxx2104.info' }
     ]
   },
   /*

@@ -55,23 +55,20 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['user', 'users', 'posts', 'account'])
+    ...mapGetters(['users', 'posts', 'account'])
   },
   async mounted() {
-    if (!process.browser) {
-      return
+    if (!process.browser) return
+    // account
+    if (this.account.email) {
+      const account = await auth()
+      this.$store.dispatch('initAccount', { account })
     }
-
-    const account = this.account.email ? this.account : await auth()
-    const promiseList = [
-      this.account.email
-        ? Promise.resolve()
-        : this.$store.dispatch('initAccount', { account: account } || null),
+    // posts
+    await Promise.all([
       this.posts.length ? Promise.resolve() : this.$store.dispatch('initPosts'),
       this.users.length ? Promise.resolve() : this.$store.dispatch('initUsers')
-    ]
-
-    await Promise.all(promiseList)
+    ])
     this.isLoaded = true
   }
 }
