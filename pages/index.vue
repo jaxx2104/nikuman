@@ -29,15 +29,11 @@ const CardColumns = styled.div`
   padding: 0.375rem 0.75rem;
 
   @media (min-width: 480px) and (max-width: 920px) {
-    .card-columns {
-      column-count: 3;
-    }
+    column-count: 3;
   }
 
   @media (max-width: 480px) {
-    .card-columns {
-      column-count: 1;
-    }
+    column-count: 1;
   }
 `
 
