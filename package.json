@@ -7,8 +7,9 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
+    "build-storybook": "build-storybook -c .storybook -o .tmp/storybook",
     "start": "nuxt start",
-    "storybook": "start-storybook -s ./ -c .storybook -p 9001 ",
+    "storybook": "start-storybook -s ./ -c .storybook -p 9001",
     "generate": "nuxt generate",
     "lint": "prettier ./**/*.{css,js,json,scss,vue}",
     "precommit": "lint-staged"
