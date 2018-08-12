@@ -12,12 +12,7 @@ export default {
     thumbsup: 0
   },
   getters: {
-    post: state => {
-      const post = state.post
-      if (!post) return null
-      post.user = state.users.find(user => user.email === post.from)
-      return post
-    }
+    post: state => state
   },
   mutations: {
     setPost(state, { body, date, from, thumbsdown, thumbsup }) {

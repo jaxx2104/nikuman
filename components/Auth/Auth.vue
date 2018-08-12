@@ -1,10 +1,10 @@
 <template>
   <div class="auth">
-    <img
+    <Icon
       v-if="account.email || isAuth"
       :src="account.icon || '/assets/img/user.png'"
       :title="account.name || 'user'"
-    >
+    />
     <Button
       v-else
       :action="authAccount"
@@ -16,19 +16,29 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import Button from '../Button/'
+import styled from 'vue-styled-components'
+import Button from '~/components/Button'
+
+const Icon = styled.img`
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+`
 
 export default {
   name: 'Auth',
   components: {
-    Button
+    Button,
+    Icon
   },
   props: {
     isAuth: { type: Boolean, default: false }
   },
 
   data() {
-    return { text: 'Login' }
+    return {
+      text: 'Login'
+    }
   },
   computed: {
     ...mapGetters(['account'])
@@ -38,11 +48,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.auth img {
-  border-radius: 50%;
-  height: 48px;
-  width: 48px;
-}
-</style>

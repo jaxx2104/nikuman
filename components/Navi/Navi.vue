@@ -1,21 +1,45 @@
 <template>
-  <header>
-    <div class="brand">
-      <h1>{{ title }}</h1>
-    </div>
-    <div class="menu">
+  <Header>
+    <Brand>{{ title }}</Brand>
+    <Menu>
       <Auth/>
-    </div>
-  </header>
+    </Menu>
+  </Header>
 </template>
 
 <script>
+import styled from 'vue-styled-components'
 import Auth from '~/components/Auth'
+
+const Header = styled.header`
+  align-items: center;
+  background-color: rebeccapurple;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+`
+
+const Brand = styled.h1`
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+  padding: 1.45rem 1.0875rem;
+  text-decoration: none;
+`
+
+const Menu = styled.div`
+  padding: 1rem;
+`
 
 export default {
   name: 'Navi',
   components: {
-    Auth
+    Auth,
+    Brand,
+    Header,
+    Menu
   },
   data() {
     return {
@@ -24,28 +48,3 @@ export default {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-header {
-  align-items: center;
-  background-color: rebeccapurple;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-}
-.brand {
-  padding: 1.45rem 1.0875rem;
-}
-.menu {
-  padding: 1rem;
-}
-.brand h1 {
-  font-weight: 800;
-  font-size: 1.5rem;
-  color: white;
-  text-decoration: none;
-  margin: 0;
-}
-</style>

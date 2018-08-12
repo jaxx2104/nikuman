@@ -1,12 +1,52 @@
-<template lang="html">
-  <div class="spinner">
-    <div class="double-bounce1"/>
-    <div class="double-bounce2"/>
-  </div>
+<template>
+  <Spinner>
+    <Bouce/>
+    <BouceDelay />
+  </Spinner>
 </template>
 
 <script>
+import styled from 'vue-styled-components'
+
+const Spinner = styled.div`
+  height: 40px;
+  margin: 100px auto;
+  position: relative;
+  width: 40px;
+`
+
+const Bouce = styled.div`
+  animation: sk-bounce 2s infinite ease-in-out;
+  background-color: rebeccapurple;
+  border-radius: 50%;
+  height: 100%;
+  left: 0;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  @keyframes sk-bounce {
+    0%,
+    100% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }
+`
+
+const BouceDelay = Bouce.extend`
+  animation-delay: -1s;
+`
+
 export default {
+  components: {
+    Bouce,
+    BouceDelay,
+    Spinner
+  },
   data: () => ({
     loading: false
   }),
@@ -20,55 +60,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.spinner {
-  width: 40px;
-  height: 40px;
-
-  position: relative;
-  margin: 100px auto;
-}
-
-.double-bounce1,
-.double-bounce2 {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: rebeccapurple;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  -webkit-animation: sk-bounce 2s infinite ease-in-out;
-  animation: sk-bounce 2s infinite ease-in-out;
-}
-
-.double-bounce2 {
-  -webkit-animation-delay: -1s;
-  animation-delay: -1s;
-}
-
-@-webkit-keyframes sk-bounce {
-  0%,
-  100% {
-    -webkit-transform: scale(0);
-  }
-  50% {
-    -webkit-transform: scale(1);
-  }
-}
-
-@keyframes sk-bounce {
-  0%,
-  100% {
-    transform: scale(0);
-    -webkit-transform: scale(0);
-  }
-  50% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-  }
-}
-</style>

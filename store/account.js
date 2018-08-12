@@ -8,9 +8,7 @@ export default {
     name: null
   },
   getters: {
-    account: state => {
-      return state
-    }
+    account: state => state
   },
   mutations: {
     setAccount(state, { displayName, email, photoURL }) {
