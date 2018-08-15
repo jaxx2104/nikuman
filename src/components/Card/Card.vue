@@ -40,7 +40,7 @@ import { distanceInWordsToNow } from 'date-fns'
 import { mapGetters } from 'vuex'
 import copyToClipboard from 'copy-to-clipboard'
 import styled from 'vue-styled-components'
-import Button from '~/components/Button'
+import Button from '~/src/components/Button'
 
 const StyledCard = styled.div`
   background-clip: content-box;
@@ -112,7 +112,7 @@ export default {
   computed: {
     ...mapGetters(['users', 'account']),
     image() {
-      return this.post.body || 'post.jpeg'
+      return this.post.body || '/post.jpeg'
     },
     author() {
       /* eslint-disable no-console */

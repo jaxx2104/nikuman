@@ -1,6 +1,6 @@
 import { database } from 'firebase'
 import { firebaseAction } from 'vuexfire'
-import { postsRef } from '~/plugins/firebase'
+import { postsRef } from '~/src/plugins/firebase'
 import assignWith from 'lodash/assignWith'
 
 export default {

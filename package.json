@@ -12,7 +12,7 @@
     "serve": "firebase serve",
     "deploy": "firebase deploy",
     "start": "nuxt start",
-    "storybook": "start-storybook -s ./ -c .storybook -p 9001",
+    "storybook": "start-storybook -s ./src/static -c .storybook -p 9001",
     "generate": "nuxt generate",
     "lint": "prettier ./**/*.{css,js,json,scss,vue}",
     "precommit": "lint-staged"

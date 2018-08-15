@@ -17,7 +17,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import styled from 'vue-styled-components'
-import Button from '~/components/Button'
+import Button from '~/src/components/Button'
 
 const InputBtn = styled.section`
   display: flex;
