@@ -1458,7 +1458,7 @@ babel-polyfill@6.26.0:
     core-js "^2.5.0"
     regenerator-runtime "^0.10.5"
 
-babel-preset-env@^1.6.0, babel-preset-env@^1.7.0:
+babel-preset-env@1.7.0, babel-preset-env@^1.6.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.7.0.tgz#dea79fa4ebeb883cd35dab07e260c1c9c04df77a"
   dependencies:
@@ -3772,9 +3772,9 @@ grpc@1.13.1:
     node-pre-gyp "^0.10.0"
     protobufjs "^5.0.3"
 
-grpc@1.14.0:
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/grpc/-/grpc-1.14.0.tgz#5aea131ef078285eff543301b99ba994e4db2c73"
+grpc@1.14.1:
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/grpc/-/grpc-1.14.1.tgz#42d5900fd13a0daca1a58155cd4ab4d0c2f9c716"
   dependencies:
     lodash "^4.17.5"
     nan "^2.0.0"
