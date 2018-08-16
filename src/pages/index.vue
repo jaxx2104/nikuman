@@ -56,7 +56,7 @@ export default {
   async mounted() {
     if (!process.browser) return
     // account
-    if (this.account.email) {
+    if (!this.account.email) {
       const account = await auth()
       this.$store.dispatch('initAccount', { account })
     }
