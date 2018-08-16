@@ -1,5 +1,5 @@
 import { auth } from 'firebase'
-import { usersRef } from '~/plugins/firebase'
+import { usersRef } from '~/src/plugins/firebase'
 
 export default {
   state: {

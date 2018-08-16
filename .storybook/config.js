@@ -5,7 +5,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const req = require.context('../components', true, /\.story\.js$/)
+const req = require.context('../src/components', true, /\.story\.js$/)
 
 function loadStories() {
   req.keys().forEach(filename => req(filename))

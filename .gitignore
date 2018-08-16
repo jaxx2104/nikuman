@@ -15,3 +15,6 @@ static/sw.js
 
 .env
 .tmp
+
+# firebase
+*.cache

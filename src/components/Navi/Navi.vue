@@ -9,7 +9,7 @@
 
 <script>
 import styled from 'vue-styled-components'
-import Auth from '~/components/Auth'
+import Auth from '~/src/components/Auth'
 
 const Header = styled.header`
   align-items: center;

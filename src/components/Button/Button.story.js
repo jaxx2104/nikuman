@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue'
 import VueInfoAddon from 'storybook-addon-vue-info'
 import Button from './Button.vue'
-import '~/assets/css/storybook.css'
+import '~/src/assets/css/storybook.css'
 
 storiesOf('Button', module)
   .addDecorator(VueInfoAddon)

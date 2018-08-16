@@ -18,6 +18,10 @@ module.exports = {
         })
       }
     },
+    babel: {
+      presets: ['vue-app', 'env'],
+      plugins: [['babel-plugin-root-import'], ['transform-object-rest-spread']]
+    },
     vendor: ['firebase', 'vuexfire']
   },
   cache: {
@@ -85,5 +89,6 @@ module.exports = {
         }
       }
     }
-  }
+  },
+  srcDir: 'src'
 }

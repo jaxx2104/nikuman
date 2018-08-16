@@ -17,11 +17,11 @@
 import { mapGetters } from 'vuex'
 import styled from 'vue-styled-components'
 
-import auth from '~/plugins/auth'
-import Card from '~/components/Card'
-import InputText from '~/components/InputText'
-import Loading from '~/components/Loading'
-import Navi from '~/components/Navi'
+import auth from '~/src/plugins/auth'
+import Card from '~/src/components/Card'
+import InputText from '~/src/components/InputText'
+import Loading from '~/src/components/Loading'
+import Navi from '~/src/components/Navi'
 
 const CardColumns = styled.div`
   column-count: 4;
@@ -56,7 +56,7 @@ export default {
   async mounted() {
     if (!process.browser) return
     // account
-    if (this.account.email) {
+    if (!this.account.email) {
       const account = await auth()
       this.$store.dispatch('initAccount', { account })
     }
