@@ -36,6 +36,14 @@ jobs:
       - run: yarn build-storybook
       - store_artifacts:
           path: .tmp/storybook
+  deploy:
+    working_directory: ~/repo
+    docker:
+      - image: node:10.8.0
+    steps:
+      - attach_workspace:
+          at: .
+      - run: yarn deploy -- --token=$FIREBASE_TOKEN
 
 workflows:
   version: 2
@@ -48,3 +56,9 @@ workflows:
       - docs:
           requires:
             - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
