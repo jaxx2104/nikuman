@@ -43,7 +43,8 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - run: yarn deploy -- --token=$FIREBASE_TOKEN
+      - run: cd functions && npm install
+      - run: yarn deploy --token=$FIREBASE_TOKEN
 
 workflows:
   version: 2
@@ -59,6 +60,3 @@ workflows:
       - deploy:
           requires:
             - build
-          filters:
-            branches:
-              only: master
