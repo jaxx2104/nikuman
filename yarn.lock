@@ -278,7 +278,7 @@
     winston "2.4.0"
     yargs "11.0.0"
 
-"@google-cloud/nodejs-repo-tools@^2.3.3":
+"@google-cloud/nodejs-repo-tools@2.3.3":
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/@google-cloud/nodejs-repo-tools/-/nodejs-repo-tools-2.3.3.tgz#a5447c6dad87777ccafbf8d666344ac65394d094"
   dependencies:
@@ -4511,7 +4511,7 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-firebase-tools@^4.1.1:
+firebase-tools@4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-4.1.1.tgz#506d860408cd258f7c8d37cd6d8de2bbe7df9793"
   dependencies:
