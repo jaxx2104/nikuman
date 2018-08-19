@@ -4507,9 +4507,9 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-firebase-tools@4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-4.1.1.tgz#506d860408cd258f7c8d37cd6d8de2bbe7df9793"
+firebase-tools@4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-4.1.2.tgz#7ce6718e15e2011120785891edd667c2e2cf206d"
   dependencies:
     JSONStream "^1.2.1"
     archiver "^2.1.1"
