@@ -7982,10 +7982,6 @@ parse-passwd@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/parse-passwd/-/parse-passwd-1.0.0.tgz#6d5b934a456993b23d37f40a382d6f1666a8e5c6"
 
-parse5@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/parse5/-/parse5-5.0.0.tgz#4d02710d44f3c3846197a11e205d4ef17842b81a"
-
 parseurl@~1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.2.tgz#fc289d4ed8993119460c156253262cdc8de65bf3"
@@ -10140,14 +10136,14 @@ statuses@~1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.4.0.tgz#bb73d446da2796106efcc1b601a253d6c46bd087"
 
-storybook-addon-vue-info@0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/storybook-addon-vue-info/-/storybook-addon-vue-info-0.6.0.tgz#8374e41ffa7548553043c11565000267cd243a6c"
+storybook-addon-vue-info@0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/storybook-addon-vue-info/-/storybook-addon-vue-info-0.6.1.tgz#2c191fc5fa0e48da3d1fefeb255924d3f751d9dc"
   dependencies:
     dedent "^0.7.0"
     highlight.js "^9.12.0"
     marked "^0.3.19"
-    parse5 "^5.0.0"
+    vue-template-compiler "^2.5.16"
 
 stream-browserify@^2.0.1:
   version "2.0.1"
@@ -11180,7 +11176,7 @@ vue-styled-components@1.3.0:
     lodash.isplainobject "^4.0.6"
     stylis "^2.0.3"
 
-vue-template-compiler@^2.5.17:
+vue-template-compiler@^2.5.16, vue-template-compiler@^2.5.17:
   version "2.5.17"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.17.tgz#52a4a078c327deb937482a509ae85c06f346c3cb"
   dependencies:
