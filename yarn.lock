@@ -253,7 +253,7 @@
     string-format-obj "^1.1.0"
     through2 "^2.0.3"
 
-"@google-cloud/functions-emulator@^1.0.0-beta.4":
+"@google-cloud/functions-emulator@^1.0.0-beta.5":
   version "1.0.0-beta.5"
   resolved "https://registry.yarnpkg.com/@google-cloud/functions-emulator/-/functions-emulator-1.0.0-beta.5.tgz#08aa14a007b739aadcf7296e0b4354cd8a8d81df"
   dependencies:
@@ -4506,9 +4506,9 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-firebase-tools@4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-4.1.2.tgz#7ce6718e15e2011120785891edd667c2e2cf206d"
+firebase-tools@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-4.2.0.tgz#1013bca76222c82d1d4b7c9ddb4607b57e9628b3"
   dependencies:
     JSONStream "^1.2.1"
     archiver "^2.1.1"
@@ -4549,7 +4549,7 @@ firebase-tools@4.1.2:
     uuid "^3.0.0"
     winston "^1.0.1"
   optionalDependencies:
-    "@google-cloud/functions-emulator" "^1.0.0-beta.4"
+    "@google-cloud/functions-emulator" "^1.0.0-beta.5"
 
 firebase@2.x.x:
   version "2.4.2"
