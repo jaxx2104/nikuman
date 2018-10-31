@@ -51,7 +51,7 @@
     "mkdirp": "0.5.1",
     "prettier": "1.14.2",
     "rimraf": "2.6.2",
-    "storybook-addon-vue-info": "0.6.1",
+    "storybook-addon-vue-info": "0.7.0",
     "vue-styled-components": "1.4.0",
     "vuexfire": "2.3.1"
   }
