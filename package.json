@@ -41,7 +41,7 @@
     "eslint": "5.4.0",
     "eslint-config-prettier": "3.0.1",
     "eslint-loader": "2.1.0",
-    "eslint-plugin-prettier": "2.6.2",
+    "eslint-plugin-prettier": "3.0.1",
     "eslint-plugin-vue": "4.7.1",
     "firebase": "5.4.1",
     "firebase-tools": "4.2.0",
