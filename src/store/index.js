@@ -3,7 +3,7 @@ import orderBy from 'lodash/orderBy'
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import { usersRef, postsRef } from '~/src/plugins/firebase'
+import { usersRef, postsRef } from '~src/plugins/firebase'
 import account from './account'
 import post from './post'
 

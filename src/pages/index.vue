@@ -1,13 +1,9 @@
 <template>
   <div>
-    <Navi/>
-    <InputText/>
+    <Navi />
+    <InputText />
     <CardColumns v-if="isLoaded">
-      <Card
-        v-for="post in posts"
-        :key="post['.key']"
-        :post="post"
-      />
+      <Card v-for="post in posts" :key="post['.key']" :post="post" />
     </CardColumns>
     <Loading v-else />
   </div>
@@ -17,11 +13,11 @@
 import { mapGetters } from 'vuex'
 import styled from 'vue-styled-components'
 
-import auth from '~/src/plugins/auth'
-import Card from '~/src/components/Card'
-import InputText from '~/src/components/InputText'
-import Loading from '~/src/components/Loading'
-import Navi from '~/src/components/Navi'
+import auth from '~src/plugins/auth'
+import Card from '~src/components/Card'
+import InputText from '~src/components/InputText'
+import Loading from '~src/components/Loading'
+import Navi from '~src/components/Navi'
 
 const CardColumns = styled.div`
   column-count: 4;

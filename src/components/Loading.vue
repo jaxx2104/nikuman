@@ -1,6 +1,6 @@
 <template>
   <Spinner>
-    <Bouce/>
+    <Bouce />
     <BouceDelay />
   </Spinner>
 </template>

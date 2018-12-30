@@ -1,35 +1,18 @@
 <template>
   <transition name="fade">
-    <StyledCard
-      v-show="isShow"
-      ontouchstart=""
-    >
-      <img
-        :src="image"
-        :title="image"
-      >
+    <StyledCard v-show="isShow" ontouchstart="">
+      <img :src="image" :title="image" />
       <CardOverray>
-        <Button
-          :action="thumbsUp"
-          :body="post.thumbsup"
-          prefix="👍"
-        />
-        <Button
-          :action="thumbsDown"
-          :body="post.thumbsdown"
-          prefix="👎"
-        />
-        <Button
-          :action="copyUrl"
-          :body="copyUrlLabel"
-        />
-        <Button
-          :action="copyMarkdown"
-          :body="copyLgtmLabel"
-        />
+        <Button :action="thumbsUp" :body="post.thumbsup" prefix="👍" />
+        <Button :action="thumbsDown" :body="post.thumbsdown" prefix="👎" />
+        <Button :action="copyUrl" :body="copyUrlLabel" />
+        <Button :action="copyMarkdown" :body="copyLgtmLabel" />
       </CardOverray>
       <CardBody>
-        <p><strong>{{ author }}</strong>&nbsp;{{ authored }}</p>
+        <p>
+          <strong>{{ author }}</strong
+          >&nbsp;{{ authored }}
+        </p>
       </CardBody>
     </StyledCard>
   </transition>
@@ -40,7 +23,7 @@ import { distanceInWordsToNow } from 'date-fns'
 import { mapGetters } from 'vuex'
 import copyToClipboard from 'copy-to-clipboard'
 import styled from 'vue-styled-components'
-import Button from '~/src/components/Button'
+import Button from '~src/components/Button'
 
 const StyledCard = styled.div`
   background-clip: content-box;

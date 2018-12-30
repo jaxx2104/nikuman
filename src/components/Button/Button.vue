@@ -1,8 +1,5 @@
 <template>
-  <StyledButton
-    :class="[isClick ? 'selected' : '', size]"
-    @click="onClick()"
-  >
+  <StyledButton :class="[isClick ? 'selected' : '', size]" @click="onClick()">
     {{ prefix }} {{ body }}
   </StyledButton>
 </template>

@@ -5,19 +5,14 @@
       :src="account.icon || '/user.png'"
       :title="account.name || 'user'"
     />
-    <Button
-      v-else
-      :action="authAccount"
-      :body="text"
-      size="m"
-    />
+    <Button v-else :action="authAccount" :body="text" size="m" />
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import styled from 'vue-styled-components'
-import Button from '~/src/components/Button'
+import Button from '~src/components/Button'
 
 const Icon = styled.img`
   border-radius: 50%;

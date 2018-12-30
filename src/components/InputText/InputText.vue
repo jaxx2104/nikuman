@@ -5,19 +5,14 @@
       :placeholder="isDisabled ? 'http://ABCDEF.png' : 'Please Login'"
       type="url"
     />
-    <Button
-      :disabled="!isDisabled"
-      :action="addPost"
-      body="Submit"
-      size="m"
-    />
+    <Button :disabled="!isDisabled" :action="addPost" body="Submit" size="m" />
   </InputBtn>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import styled from 'vue-styled-components'
-import Button from '~/src/components/Button'
+import Button from '~src/components/Button'
 
 const InputBtn = styled.section`
   display: flex;

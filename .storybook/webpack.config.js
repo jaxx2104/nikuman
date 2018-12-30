@@ -1,4 +1,6 @@
+const path = require('path')
 const webpack = require('webpack')
+require('dotenv').config()
 
 module.exports = (baseConfig, env, defaultConfig) => {
   defaultConfig.plugins.push(
@@ -11,5 +13,6 @@ module.exports = (baseConfig, env, defaultConfig) => {
       'MESSAGINGSENDERID'
     ])
   )
+  defaultConfig.resolve.alias['~src'] = path.resolve(__dirname, '../src')
   return defaultConfig
 }
