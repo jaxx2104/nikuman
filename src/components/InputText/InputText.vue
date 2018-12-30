@@ -1,11 +1,16 @@
 <template>
   <InputBtn>
     <StyledInput
-      v-model="input"
+      v-model.trim="input"
       :placeholder="isDisabled ? 'http://ABCDEF.png' : 'Please Login'"
       type="url"
     />
-    <Button :disabled="!isDisabled" :action="addPost" body="Submit" size="m" />
+    <Button
+      :disabled="!isDisabled"
+      @click.native="addPost"
+      body="Submit"
+      size="m"
+    />
   </InputBtn>
 </template>
 

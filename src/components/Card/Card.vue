@@ -3,10 +3,14 @@
     <StyledCard v-show="isShow" ontouchstart="">
       <img :src="image" :title="image" />
       <CardOverray>
-        <Button :action="thumbsUp" :body="post.thumbsup" prefix="👍" />
-        <Button :action="thumbsDown" :body="post.thumbsdown" prefix="👎" />
-        <Button :action="copyUrl" :body="copyUrlLabel" />
-        <Button :action="copyMarkdown" :body="copyLgtmLabel" />
+        <Button @click.native="thumbsUp" :body="post.thumbsup" prefix="👍" />
+        <Button
+          @click.native="thumbsDown"
+          :body="post.thumbsdown"
+          prefix="👎"
+        />
+        <Button @click.native="copyUrl" :body="copyUrlLabel" />
+        <Button @click.native="copyMarkdown" :body="copyLgtmLabel" />
       </CardOverray>
       <CardBody>
         <p>
@@ -119,7 +123,6 @@ export default {
       setTimeout(() => (this.copyLgtmLabel = 'LGTM'), 1000)
     },
     thumbsUp() {
-      console.log(this.post.thumbsup)
       this.post.thumbsup++
       this.$store.dispatch('thumbsUp', {
         id: this.post['.key'],
