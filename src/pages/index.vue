@@ -54,6 +54,7 @@ export default {
     // account
     if (!this.account.email) {
       const account = await auth()
+      this.$store.dispatch('addAccount', { account })
       this.$store.dispatch('initAccount', { account })
     }
     // posts

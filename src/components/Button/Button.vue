@@ -1,5 +1,5 @@
 <template>
-  <StyledButton :class="[isClick ? 'selected' : '', size]" @click="onClick()">
+  <StyledButton :class="[isClick ? 'selected' : '', size]">
     {{ prefix }} {{ body }}
   </StyledButton>
 </template>
@@ -54,7 +54,6 @@ export default {
     StyledButton
   },
   props: {
-    action: { type: Function, default: () => {} },
     body: { type: [String, Number], default: '0' },
     prefix: { type: String, default: '' },
     size: { type: String, default: 's' }
@@ -68,17 +67,6 @@ export default {
   created() {},
   destroyed() {},
   mounted() {},
-  methods: {
-    onClick() {
-      this.action()
-      this.changeStatus()
-    },
-    changeStatus() {
-      this.isClick = true
-      setTimeout(() => {
-        this.isClick = false
-      }, 1000)
-    }
-  }
+  methods: {}
 }
 </script>
