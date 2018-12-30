@@ -1,13 +1,9 @@
 <template>
   <div>
-    <Navi/>
-    <InputText/>
+    <Navi />
+    <InputText />
     <CardColumns v-if="isLoaded">
-      <Card
-        v-for="post in posts"
-        :key="post['.key']"
-        :post="post"
-      />
+      <Card v-for="post in posts" :key="post['.key']" :post="post" />
     </CardColumns>
     <Loading v-else />
   </div>

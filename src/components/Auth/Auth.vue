@@ -5,12 +5,7 @@
       :src="account.icon || '/user.png'"
       :title="account.name || 'user'"
     />
-    <Button
-      v-else
-      :action="authAccount"
-      :body="text"
-      size="m"
-    />
+    <Button v-else :action="authAccount" :body="text" size="m" />
   </div>
 </template>
 

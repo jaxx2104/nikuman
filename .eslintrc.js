@@ -3,10 +3,12 @@ module.exports = {
   root: true,
   extends: [
     'eslint:recommended',
-    'plugin:prettier/recommended',
-    'plugin:vue/recommended'
+    'plugin:vue/essential',
+    'plugin:prettier/recommended'
   ],
   parserOptions: {
-    ecmaVersion: 2017
+    parser: 'babel-eslint',
+    ecmaVersion: 2017,
+    sourceType: 'module'
   }
 }
