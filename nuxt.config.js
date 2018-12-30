@@ -1,13 +1,14 @@
 require('dotenv').config()
+const path = require('path')
 
 module.exports = {
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** Run ESLint on save
-    */
+     ** Run ESLint on save
+     */
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
@@ -17,12 +18,8 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    },
-    babel: {
-      presets: ['vue-app', 'env'],
-      plugins: [['babel-plugin-root-import'], ['transform-object-rest-spread']]
-    },
-    vendor: ['firebase', 'vuexfire']
+      config.resolve.alias['~src'] = path.resolve(__dirname, 'src')
+    }
   },
   cache: {
     max: 1000,
@@ -37,8 +34,8 @@ module.exports = {
     MESSAGINGSENDERID: process.env.MESSAGINGSENDERID
   },
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: 'Nikuman',
     meta: [
@@ -67,8 +64,8 @@ module.exports = {
     ]
   },
   /*
-  ** Customize the progress bar color
-  */
+   ** Customize the progress bar color
+   */
   loading: { color: 'white' },
   loadingIndicator: {
     name: 'circle',

@@ -1,4 +1,4 @@
-import auth from '~/src/plugins/auth'
+import auth from '~src/plugins/auth'
 
 export default async function({ store }) {
   if (process.browser) {

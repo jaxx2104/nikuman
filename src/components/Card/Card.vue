@@ -40,7 +40,7 @@ import { distanceInWordsToNow } from 'date-fns'
 import { mapGetters } from 'vuex'
 import copyToClipboard from 'copy-to-clipboard'
 import styled from 'vue-styled-components'
-import Button from '~/src/components/Button'
+import Button from '~src/components/Button'
 
 const StyledCard = styled.div`
   background-clip: content-box;

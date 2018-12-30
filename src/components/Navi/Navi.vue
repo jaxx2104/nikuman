@@ -1,15 +1,13 @@
 <template>
   <Header>
     <Brand>{{ title }}</Brand>
-    <Menu>
-      <Auth/>
-    </Menu>
+    <Menu> <Auth /> </Menu>
   </Header>
 </template>
 
 <script>
 import styled from 'vue-styled-components'
-import Auth from '~/src/components/Auth'
+import Auth from '~src/components/Auth'
 
 const Header = styled.header`
   align-items: center;

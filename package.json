@@ -26,15 +26,12 @@
   "dependencies": {
     "@nuxtjs/pwa": "2.0.8",
     "grpc": "1.14.1",
-    "nuxt": "1.4.2"
+    "nuxt": "^2.0.0"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "2.3.3",
     "@storybook/vue": "3.4.10",
     "babel-eslint": "8.2.6",
-    "babel-plugin-root-import": "6.1.0",
-    "babel-polyfill": "6.26.0",
-    "babel-preset-env": "1.7.0",
     "copy-to-clipboard": "3.0.8",
     "date-fns": "1.29.0",
     "dotenv": "6.0.0",
