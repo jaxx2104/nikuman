@@ -39,7 +39,7 @@
     "eslint-config-prettier": "3.3.0",
     "eslint-loader": "2.1.1",
     "eslint-plugin-prettier": "3.0.1",
-    "eslint-plugin-vue": "5.0.0",
+    "eslint-plugin-vue": "5.1.0",
     "firebase": "5.7.2",
     "firebase-tools": "6.2.2",
     "husky": "1.3.1",
