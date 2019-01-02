@@ -47,7 +47,7 @@
     "lodash": "4.17.11",
     "mkdirp": "0.5.1",
     "prettier": "1.15.3",
-    "rimraf": "2.6.2",
+    "rimraf": "2.6.3",
     "vue-styled-components": "1.4.3",
     "vuexfire": "2.3.1"
   },
