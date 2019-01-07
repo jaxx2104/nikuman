@@ -13732,10 +13732,10 @@ vue-style-loader@^4.1.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-styled-components@1.4.3:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/vue-styled-components/-/vue-styled-components-1.4.3.tgz#f7da72a41ba3b12801b5868cda4609a04b005034"
-  integrity sha512-wTz+Z/cKCFQs4E+NE6jjv1qb6uzazNeRNxdj+s3xeY8roIaMcyw4ij7NMslt2baNG+0tJfkrzCqFQMRx+4VY+w==
+vue-styled-components@1.4.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/vue-styled-components/-/vue-styled-components-1.4.4.tgz#ccb998c3c580b3632343683d84ecae122a59f9e8"
+  integrity sha512-ywLHfc4NbQemgd3kwG8rr0tcL2yD/ujqPKGPLILFZOCkwIJyBE4SlCVH6U7qBhqXNqCW9tBxF3GN44X0xyQ/8w==
   dependencies:
     glamor "^2.20.24"
     inline-style-prefixer "^2.0.5"
