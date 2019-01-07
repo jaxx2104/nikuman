@@ -48,7 +48,7 @@
     "mkdirp": "0.5.1",
     "prettier": "1.15.3",
     "rimraf": "2.6.3",
-    "vue-styled-components": "1.4.3",
+    "vue-styled-components": "1.4.4",
     "vuexfire": "2.3.1"
   },
   "husky": {
