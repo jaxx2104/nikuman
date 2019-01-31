@@ -6145,10 +6145,10 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-firebase-tools@6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-6.3.0.tgz#5c251221ccf328e934d2d475e841e914bf447ea6"
-  integrity sha512-MHC/qVnT9ss7fSM9XPP05txcLNTbO2YLVQw8yqYbueZ+2IroJF9Iw57jfOAtjVvS3aoHPJysx3gaz1+StaFe8g==
+firebase-tools@6.3.1:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-6.3.1.tgz#9a3e12a3215da2adc1df885ba32ddd6eac08bd43"
+  integrity sha512-wBlW1ad+kDQrwU5/SfTXkEe7xwt48oXskV4lHDCaOw/7PfGamuTA38aYpp+jisYCBgEj1275Heet5m62OOr6RQ==
   dependencies:
     JSONStream "^1.2.1"
     archiver "^2.1.1"
