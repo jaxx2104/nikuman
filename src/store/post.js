@@ -1,6 +1,5 @@
 import { firebaseAction } from 'vuexfire'
 import firebase, { postsRef } from '~src/plugins/firebase'
-import assignWith from 'lodash/assignWith'
 
 export const state = () => ({
   body: '',
@@ -44,13 +43,13 @@ export const actions = {
     let thumbsdown = snapshot.val().thumbsdown
     thumbsdown++
     await snapshot.ref.update({ thumbsdown })
-    commit('setPost', assignWith(snapshot.val(), { thumbsdown }))
+    commit('setPost', Object.assign(snapshot.val(), { thumbsdown }))
   },
   up: async ({ commit }, { id }) => {
     const snapshot = await postsRef.child(id).once('value')
     let thumbsup = snapshot.val().thumbsup
     thumbsup++
     await snapshot.ref.update({ thumbsup })
-    commit('setPost', assignWith(snapshot.val(), { thumbsup }))
+    commit('setPost', Object.assign(snapshot.val(), { thumbsup }))
   }
 }

@@ -1,5 +1,4 @@
 import { firebaseMutations, firebaseAction } from 'vuexfire'
-import orderBy from 'lodash/orderBy'
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -13,7 +12,7 @@ export const state = () => ({
 })
 
 export const getters = {
-  posts: state => orderBy(state.posts, 'date', 'desc'),
+  posts: state => [...state.posts].reverse(),
   users: state => state.users
 }
 
