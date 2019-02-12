@@ -1,28 +1,22 @@
+require('dotenv').config()
+const path = require('path')
+
 module.exports = {
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** Run ESLint on save
-    */
-    extend(config, ctx) {
-      if (ctx.dev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    },
-    vendor: ['firebase', 'vuexfire']
+     ** Run ESLint on save
+     */
+    extend(config) {
+      config.resolve.alias['~src'] = path.resolve(__dirname, 'src')
+    }
   },
   cache: {
     max: 1000,
     maxAge: 900000
   },
-  css: ['~/assets/main.scss'],
   env: {
     APIKEY: process.env.APIKEY,
     AUTHDOMAIN: process.env.AUTHDOMAIN,
@@ -32,8 +26,8 @@ module.exports = {
     MESSAGINGSENDERID: process.env.MESSAGINGSENDERID
   },
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: 'Nikuman',
     meta: [
@@ -58,12 +52,20 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'dns-prefetch', href: 'https://nikuman.netlify.com' }
+      { rel: 'dns-prefetch', href: 'https://nikuman.jaxx2104.info' }
+    ],
+    script: [
+      {
+        src: 'https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js',
+        integrity:
+          'sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA',
+        crossorigin: 'anonymous'
+      }
     ]
   },
   /*
-  ** Customize the progress bar color
-  */
+   ** Customize the progress bar color
+   */
   loading: { color: 'white' },
   loadingIndicator: {
     name: 'circle',
@@ -72,10 +74,10 @@ module.exports = {
   },
   manifest: {
     name: 'Nikuman',
+    lang: 'ja',
     theme_color: 'rebeccapurple'
   },
-  modules: ['@nuxtjs/font-awesome', '@nuxtjs/pwa'],
-  plugins: ['~/plugins/clipboard.js'],
+  modules: ['@nuxtjs/pwa'],
   render: {
     static: {
       maxAge: '1y',
@@ -85,5 +87,6 @@ module.exports = {
         }
       }
     }
-  }
+  },
+  srcDir: 'src'
 }

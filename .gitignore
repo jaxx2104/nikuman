@@ -12,3 +12,9 @@ dist
 
 # sw.js
 static/sw.js
+
+.env
+.tmp
+
+# firebase
+*.cache
