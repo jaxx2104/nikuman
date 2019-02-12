@@ -71,7 +71,6 @@ export default {
   },
   methods: {
     onClick() {
-      this.action()
       this.changeStatus()
     },
     changeStatus() {
