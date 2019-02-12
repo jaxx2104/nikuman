@@ -53,6 +53,14 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'dns-prefetch', href: 'https://nikuman.jaxx2104.info' }
+    ],
+    script: [
+      {
+        src: 'https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js',
+        integrity:
+          'sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA',
+        crossorigin: 'anonymous'
+      }
     ]
   },
   /*
@@ -66,6 +74,7 @@ module.exports = {
   },
   manifest: {
     name: 'Nikuman',
+    lang: 'ja',
     theme_color: 'rebeccapurple'
   },
   modules: ['@nuxtjs/pwa'],
