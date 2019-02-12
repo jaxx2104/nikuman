@@ -24,7 +24,7 @@
 
 <script>
 import { distanceInWordsToNow } from 'date-fns'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import copyToClipboard from 'copy-to-clipboard'
 import styled from 'vue-styled-components'
 import Button from '~src/components/Button'
@@ -97,7 +97,9 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['users', 'account']),
+    ...mapGetters(['users']),
+    ...mapGetters('account', ['account']),
+
     image() {
       return this.post.body || '/post.jpeg'
     },
@@ -112,6 +114,8 @@ export default {
     }
   },
   methods: {
+    ...mapActions('post', ['up', 'down']),
+
     copyUrl() {
       copyToClipboard(this.post.body)
       this.copyUrlLabel = 'Copied!'
@@ -123,18 +127,10 @@ export default {
       setTimeout(() => (this.copyLgtmLabel = 'LGTM'), 1000)
     },
     thumbsUp() {
-      this.post.thumbsup++
-      this.$store.dispatch('thumbsUp', {
-        id: this.post['.key'],
-        thumbsup: this.post.thumbsup
-      })
+      this.up({ id: this.post['.key'] })
     },
     thumbsDown() {
-      this.post.thumbsdown++
-      this.$store.dispatch('thumbsDown', {
-        id: this.post['.key'],
-        thumbsdown: this.post.thumbsdown
-      })
+      this.down({ id: this.post['.key'] })
     }
   }
 }

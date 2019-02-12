@@ -61,11 +61,11 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['account'])
+    ...mapGetters('account', ['account'])
   },
   methods: {
     async addPost() {
-      await this.$store.dispatch('addPost', {
+      await this.$store.dispatch('post/addPost', {
         email: this.account.email,
         body: this.input
       })

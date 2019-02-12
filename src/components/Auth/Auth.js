@@ -20,7 +20,7 @@ export default {
           />
         ) : (
           <Button
-            onClick={() => this.authAccount()}
+            nativeOnClick={() => this.authAccount()}
             body={this.text}
             size="m"
           />
@@ -37,9 +37,9 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['account'])
+    ...mapGetters('account', ['account'])
   },
   methods: {
-    ...mapActions(['authAccount'])
+    ...mapActions('account', ['authAccount'])
   }
 }
