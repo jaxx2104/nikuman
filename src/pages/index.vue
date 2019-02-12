@@ -47,15 +47,16 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['users', 'posts', 'account'])
+    ...mapGetters(['users', 'posts']),
+    ...mapGetters('account', ['account'])
   },
   async mounted() {
     if (!process.browser) return
     // account
     if (!this.account.email) {
       const account = await auth()
-      this.$store.dispatch('addAccount', { account })
-      this.$store.dispatch('initAccount', { account })
+      this.$store.dispatch('account/addAccount', { account })
+      this.$store.dispatch('account/initAccount', { account })
     }
     // posts
     await Promise.all([

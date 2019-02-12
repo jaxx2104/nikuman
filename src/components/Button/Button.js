@@ -47,7 +47,7 @@ export default {
     return (
       <StyledButton
         class={[this.selected, this.size]}
-        onClick={() => this.onClick()}
+        nativeOnClick={() => this.onClick()}
       >
         {this.prefix}
         {this.body}
