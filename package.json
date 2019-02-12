@@ -8,6 +8,7 @@
     "dev": "nuxt",
     "build": "nuxt build && npm run build-copy-ssr",
     "build-copy-ssr": "rimraf functions/ssr && mkdirp functions/ssr && cp -R .nuxt/dist functions/ssr/dist",
+    "build-spa": "nuxt build --spa",
     "build-storybook": "build-storybook -c .storybook -o .tmp/storybook",
     "serve": "firebase serve",
     "deploy": "firebase deploy",
