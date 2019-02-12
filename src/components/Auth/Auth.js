@@ -1,15 +1,3 @@
-<template>
-  <div class="auth">
-    <Icon
-      v-if="account.email || isAuth"
-      :src="account.icon || '/user.png'"
-      :title="account.name || 'user'"
-    />
-    <Button v-else @click.native="authAccount" :body="text" size="m" />
-  </div>
-</template>
-
-<script>
 import { mapGetters, mapActions } from 'vuex'
 import styled from 'vue-styled-components'
 import Button from '~src/components/Button'
@@ -22,14 +10,27 @@ const Icon = styled.img`
 
 export default {
   name: 'Auth',
-  components: {
-    Button,
-    Icon
+  render() {
+    return (
+      <div class="auth">
+        {this.account.email || this.isAuth ? (
+          <Icon
+            src={this.account.icon || '/user.png'}
+            title={this.account.name || 'user'}
+          />
+        ) : (
+          <Button
+            onClick={() => this.authAccount()}
+            body={this.text}
+            size="m"
+          />
+        )}
+      </div>
+    )
   },
   props: {
     isAuth: { type: Boolean, default: false }
   },
-
   data() {
     return {
       text: 'Login'
@@ -42,4 +43,3 @@ export default {
     ...mapActions(['authAccount'])
   }
 }
-</script>
