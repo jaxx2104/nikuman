@@ -1,5 +1,4 @@
-import { auth } from 'firebase'
-import { usersRef } from '~src/plugins/firebase'
+import firebase, { usersRef } from '~src/plugins/firebase'
 
 export default {
   state: {
@@ -19,8 +18,8 @@ export default {
   },
   actions: {
     authAccount: () => {
-      const provider = new auth.GoogleAuthProvider()
-      auth().signInWithRedirect(provider)
+      const provider = new firebase.auth.GoogleAuthProvider()
+      firebase.auth().signInWithRedirect(provider)
     },
     addAccount: async ({ commit }, { account }) => {
       // eslint-disable-next-line no-console
