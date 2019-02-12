@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/vue'
-import Navi from './Navi.vue'
+import Navi from './Navi.js'
 import store from '~src/store'
 import '~src/assets/css/storybook.css'
 

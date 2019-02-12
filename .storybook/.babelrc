@@ -1,0 +1,5 @@
+{
+  "presets": [
+    "@nuxt/babel-preset-app"
+  ]
+}

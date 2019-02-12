@@ -1,11 +1,3 @@
-<template>
-  <Header>
-    <Brand>{{ title }}</Brand>
-    <Menu> <Auth /> </Menu>
-  </Header>
-</template>
-
-<script>
 import styled from 'vue-styled-components'
 import Auth from '~src/components/Auth'
 
@@ -33,11 +25,15 @@ const Menu = styled.div`
 
 export default {
   name: 'Navi',
-  components: {
-    Auth,
-    Brand,
-    Header,
-    Menu
+  render() {
+    return (
+      <Header>
+        <Brand>{this.title}</Brand>
+        <Menu>
+          <Auth />
+        </Menu>
+      </Header>
+    )
   },
   data() {
     return {
@@ -45,4 +41,3 @@ export default {
     }
   }
 }
-</script>

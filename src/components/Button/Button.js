@@ -1,10 +1,3 @@
-<template>
-  <StyledButton :class="[isClick ? 'selected' : '', size]">
-    {{ prefix }} {{ body }}
-  </StyledButton>
-</template>
-
-<script>
 import styled from 'vue-styled-components'
 
 const StyledButton = styled.button`
@@ -50,8 +43,16 @@ const StyledButton = styled.button`
 
 export default {
   name: 'Button',
-  components: {
-    StyledButton
+  render() {
+    return (
+      <StyledButton
+        class={[this.selected, this.size]}
+        onClick={() => this.onClick()}
+      >
+        {this.prefix}
+        {this.body}
+      </StyledButton>
+    )
   },
   props: {
     body: { type: [String, Number], default: '0' },
@@ -63,10 +64,19 @@ export default {
       isClick: false
     }
   },
-  computed: {},
-  created() {},
-  destroyed() {},
-  mounted() {},
-  methods: {}
+  computed: {
+    selected() {
+      return this.isClick ? 'selected' : ''
+    }
+  },
+  methods: {
+    onClick() {
+      this.changeStatus()
+    },
+    changeStatus() {
+      this.isClick = true
+      const reset = () => (this.isClick = false)
+      setTimeout(reset, 1000)
+    }
+  }
 }
-</script>
