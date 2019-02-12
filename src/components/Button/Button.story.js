@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/vue'
-import Button from './Button.vue'
+import Button from './Button.js'
 import '~src/assets/css/storybook.css'
 
 storiesOf('Button', module)
