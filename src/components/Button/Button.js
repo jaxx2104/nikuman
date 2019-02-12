@@ -42,6 +42,7 @@ const StyledButton = styled.button`
 `
 
 export default {
+  name: 'Button',
   render() {
     return (
       <StyledButton
@@ -53,7 +54,6 @@ export default {
       </StyledButton>
     )
   },
-  name: 'Button',
   props: {
     body: { type: [String, Number], default: '0' },
     prefix: { type: String, default: '' },
