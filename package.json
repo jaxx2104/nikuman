@@ -30,7 +30,6 @@
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "3.1.0",
     "@storybook/vue": "4.1.11",
-    "@vue/babel-preset-app": "^3.4.0",
     "babel-eslint": "10.0.1",
     "babel-preset-vue": "2.0.2",
     "copy-to-clipboard": "3.0.8",

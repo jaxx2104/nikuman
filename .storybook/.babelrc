@@ -1,5 +1,5 @@
 {
   "presets": [
-    "@vue/babel-preset-app"
+    "@nuxt/babel-preset-app"
   ]
 }
