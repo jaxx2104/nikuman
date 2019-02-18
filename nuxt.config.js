@@ -52,6 +52,11 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/apple-touch-icon.png'
+      },
       { rel: 'dns-prefetch', href: 'https://nikuman.jaxx2104.info' }
     ],
     script: [
@@ -75,7 +80,19 @@ module.exports = {
   manifest: {
     name: 'Nikuman',
     lang: 'ja',
-    theme_color: 'rebeccapurple'
+    theme_color: 'rebeccapurple',
+    icons: [
+      {
+        src: '/android-chrome-192x192.png',
+        sizes: '192x192',
+        type: 'image/png'
+      },
+      {
+        src: '/android-chrome-512x512.png',
+        sizes: '512x512',
+        type: 'image/png'
+      }
+    ]
   },
   modules: ['@nuxtjs/pwa'],
   render: {
