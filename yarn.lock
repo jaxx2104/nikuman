@@ -2279,6 +2279,32 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
+"@types/bytebuffer@*":
+  version "5.0.40"
+  resolved "https://registry.yarnpkg.com/@types/bytebuffer/-/bytebuffer-5.0.40.tgz#d6faac40dcfb09cd856cdc4c01d3690ba536d3ee"
+  integrity sha512-h48dyzZrPMz25K6Q4+NCwWaxwXany2FhQg/ErOcdZS1ZpsaDnDMZg8JYLMTGz7uvXKrcKGJUZJlZObyfgdaN9g==
+  dependencies:
+    "@types/long" "*"
+    "@types/node" "*"
+
+"@types/long@*":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.0.tgz#719551d2352d301ac8b81db732acb6bdc28dbdef"
+  integrity sha512-1w52Nyx4Gq47uuu0EVcsHBxZFJgurQ+rTKS3qMHxR1GY2T8c2AJYd6vZoZ9q1rupaDjU0yT+Jc2XTyXkjeMA+Q==
+
+"@types/node@*":
+  version "11.13.8"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.13.8.tgz#e5d71173c95533be9842b2c798978f095f912aab"
+  integrity sha512-szA3x/3miL90ZJxUCzx9haNbK5/zmPieGraZEe4WI+3srN0eGLiT22NXeMHmyhNEopn+IrxqMc7wdVwvPl8meg==
+
+"@types/protobufjs@^5.0.31":
+  version "5.0.31"
+  resolved "https://registry.yarnpkg.com/@types/protobufjs/-/protobufjs-5.0.31.tgz#83985309833e355b9836b21bf500e2b114274cd0"
+  integrity sha1-g5hTCYM+NVuYNrIb9QDisRQnTNA=
+  dependencies:
+    "@types/bytebuffer" "*"
+    "@types/node" "*"
+
 "@types/q@^1.5.1":
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.1.tgz#48fd98c1561fe718b61733daed46ff115b496e18"
@@ -7278,15 +7304,16 @@ grpc@1.19.0:
     node-pre-gyp "^0.12.0"
     protobufjs "^5.0.3"
 
-grpc@1.20.0:
-  version "1.20.0"
-  resolved "https://registry.yarnpkg.com/grpc/-/grpc-1.20.0.tgz#85ad2aeb94bdbfe59c4a40b2fff8fc1ea70cd6a0"
-  integrity sha512-HgYuJzRomkBlJAfC/78epuWzwMiByxgj4JsO6G6dHXXNfARTsUqpM/FmPSJJNFGvzCev0g6tn33CE7nWEmhDEg==
+grpc@1.20.1:
+  version "1.20.1"
+  resolved "https://registry.yarnpkg.com/grpc/-/grpc-1.20.1.tgz#9eca929a62d721db813aeb38e1295d1f9e09ebaf"
+  integrity sha512-HU8ej0orBYeHS09FQHg0WH07v2SbxTVRwjDmCuNVU0djwpN5kq82L5ndyzGRWo+QVHwsSZYgwfQ8WAloJzgsIw==
   dependencies:
+    "@types/protobufjs" "^5.0.31"
     lodash.camelcase "^4.3.0"
     lodash.clone "^4.5.0"
-    nan "^2.0.0"
-    node-pre-gyp "^0.12.0"
+    nan "^2.13.2"
+    node-pre-gyp "^0.13.0"
     protobufjs "^5.0.3"
 
 gtoken@^1.2.1, gtoken@^1.2.3:
@@ -9627,6 +9654,11 @@ nan@^2.0.0, nan@^2.9.2:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.12.1.tgz#7b1aa193e9aa86057e3c7bbd0ac448e770925552"
   integrity sha512-JY7V6lRkStKcKTvHO5NVSQRv+RV+FIL5pvDoLiAtSL9pKlC5x9PKQcZDsq7m4FO4d57mkhC6Z+QhAh3Jdk5JFw==
 
+nan@^2.13.2:
+  version "2.13.2"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.13.2.tgz#f51dc7ae66ba7d5d55e1e6d4d8092e802c9aefe7"
+  integrity sha512-TghvYc72wlMGMVMluVo9WRJc0mB8KxxF/gZ4YYFy7V2ZQX9l7rgbPg7vjS9mt6U5HXODVFVI2bOduCzwOMv/lw==
+
 nanomatch@^1.2.9:
   version "1.2.13"
   resolved "https://registry.yarnpkg.com/nanomatch/-/nanomatch-1.2.13.tgz#b87a8aa4fc0de8fe6be88895b38983ff265bd119"
@@ -9783,6 +9815,22 @@ node-pre-gyp@^0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.12.0.tgz#39ba4bb1439da030295f899e3b520b7785766149"
   integrity sha512-4KghwV8vH5k+g2ylT+sLTjy5wmUOb9vPhnM8NHvRf9dHmnW/CndrFXy2aRPaPST6dugXSdHXfeaHQm77PIz/1A==
+  dependencies:
+    detect-libc "^1.0.2"
+    mkdirp "^0.5.1"
+    needle "^2.2.1"
+    nopt "^4.0.1"
+    npm-packlist "^1.1.6"
+    npmlog "^4.0.2"
+    rc "^1.2.7"
+    rimraf "^2.6.1"
+    semver "^5.3.0"
+    tar "^4"
+
+node-pre-gyp@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.13.0.tgz#df9ab7b68dd6498137717838e4f92a33fc9daa42"
+  integrity sha512-Md1D3xnEne8b/HGVQkZZwV27WUi1ZRuZBij24TNaZwUPU3ZAFtvT6xxJGaUVillfmMKnn5oD1HoGsp2Ftik7SQ==
   dependencies:
     detect-libc "^1.0.2"
     mkdirp "^0.5.1"
