@@ -49,7 +49,7 @@
     "prettier": "1.18.2",
     "rimraf": "2.6.3",
     "vue-styled-components": "1.4.5",
-    "vuexfire": "2.3.1"
+    "vuexfire": "3.0.0"
   },
   "husky": {
     "hooks": {
