@@ -61,6 +61,11 @@ module.exports = {
     ],
     script: [
       {
+        src:
+          'https://cdn.jsdelivr.net/npm/first-input-delay@0.1.3/src/first-input-delay.min.js',
+        crossorigin: 'anonymous'
+      },
+      {
         src: 'https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js',
         integrity:
           'sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA',
