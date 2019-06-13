@@ -6637,7 +6637,7 @@ firebase@2.x.x:
   dependencies:
     faye-websocket ">=0.6.0"
 
-firebase@^6.1.1:
+firebase@6.1.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-6.1.1.tgz#156c4fc4c2803421ea4cfafe1111b265cbfbaa42"
   integrity sha512-RB8ZGcj28tU1of6l/l7TBu0By/ewmsIZtrDSlxTp/C6uawN8QtDkGbW3mWV73nkjkFYP6PwMmzCoXtdKxHpRmQ==
@@ -14344,7 +14344,7 @@ vuex@^3.1.1:
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.1.1.tgz#0c264bfe30cdbccf96ab9db3177d211828a5910e"
   integrity sha512-ER5moSbLZuNSMBFnEBVGhQ1uCBNJslH9W/Dw2W7GZN23UQA69uapP5GTT9Vm8Trc0PzBSVt6LzF3hGjmv41xcg==
 
-vuexfire@^3.0.0:
+vuexfire@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/vuexfire/-/vuexfire-3.0.0.tgz#42dd6c6232af9029c0f8c60808eb3538f8b2da1a"
   integrity sha512-/IqR3wLA0P9Ga5yLfjbHCdEygzYMn33UfHiayhUXv7aI0GTKpYC0yFRMKgdmRWl7EjUre7SbLCVcfRxGpkBkVQ==
