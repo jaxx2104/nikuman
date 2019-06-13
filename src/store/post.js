@@ -1,4 +1,4 @@
-import { firebaseAction } from 'vuexfire'
+import { firestoreAction } from 'vuexfire'
 import firebase, { postsRef } from '~src/plugins/firebase'
 
 export const state = () => ({
@@ -24,32 +24,32 @@ export const mutations = {
 }
 
 export const actions = {
-  addPost: firebaseAction((ctx, { email, body }) => {
+  addPost: firestoreAction((_, { email, body }) => {
     if (body.trim() === '') return
-    postsRef.push({
+    postsRef.add({
       body,
-      date: firebase.database.ServerValue.TIMESTAMP,
+      date: firebase.firestore.FieldValue.serverTimestamp(),
       from: email,
       thumbsdown: 0,
       thumbsup: 0
     })
   }),
-  initSingle: async ({ commit }, { id }) => {
-    const snapshot = await postsRef.child(id).once('value')
-    commit('setPost', snapshot.val())
-  },
-  down: async ({ commit }, { id }) => {
-    const snapshot = await postsRef.child(id).once('value')
-    let thumbsdown = snapshot.val().thumbsdown
+  initSingle: firestoreAction(async ({ commit }, { id }) => {
+    const snapshot = await postsRef.doc(id).get()
+    commit('setPost', snapshot.data())
+  }),
+  down: firestoreAction(async ({ commit }, { id }) => {
+    const snapshot = await postsRef.doc(id).get()
+    let { thumbsdown } = snapshot.data()
     thumbsdown++
-    await snapshot.ref.update({ thumbsdown })
-    commit('setPost', Object.assign(snapshot.val(), { thumbsdown }))
-  },
-  up: async ({ commit }, { id }) => {
-    const snapshot = await postsRef.child(id).once('value')
-    let thumbsup = snapshot.val().thumbsup
+    postsRef.doc(id).update({ thumbsdown })
+    commit('setPost', Object.assign(snapshot.data(), { thumbsdown }))
+  }),
+  up: firestoreAction(async ({ commit }, { id }) => {
+    const snapshot = await postsRef.doc(id).get()
+    let { thumbsup } = snapshot.data()
     thumbsup++
-    await snapshot.ref.update({ thumbsup })
-    commit('setPost', Object.assign(snapshot.val(), { thumbsup }))
-  }
+    postsRef.doc(id).update({ thumbsup })
+    commit('setPost', Object.assign(snapshot.data(), { thumbsup }))
+  })
 }

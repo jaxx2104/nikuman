@@ -1,4 +1,5 @@
-import { firebaseMutations, firebaseAction } from 'vuexfire'
+// import { vuexfireMutations, firebaseAction } from 'vuexfire'
+import { vuexfireMutations, firestoreAction } from 'vuexfire'
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -17,14 +18,18 @@ export const getters = {
 }
 
 export const mutations = {
-  ...firebaseMutations
+  ...vuexfireMutations
 }
 
 export const actions = {
-  initUsers: firebaseAction(({ bindFirebaseRef }) => {
-    bindFirebaseRef('users', usersRef)
+  // initUsers: firebaseAction(({ bindFirebaseRef }) => {
+  initUsers: firestoreAction(({ bindFirestoreRef }) => {
+    // bindFirebaseRef('users', usersRef)
+    bindFirestoreRef('users', usersRef)
   }),
-  initPosts: firebaseAction(({ bindFirebaseRef }) => {
-    bindFirebaseRef('posts', postsRef)
+  // initPosts: firebaseAction(({ bindFirebaseRef }) => {
+  initPosts: firestoreAction(({ bindFirestoreRef }) => {
+    // bindFirebaseRef('posts', postsRef)
+    bindFirestoreRef('posts', postsRef)
   })
 }
