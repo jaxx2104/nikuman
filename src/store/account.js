@@ -1,3 +1,4 @@
+import { firestoreAction } from 'vuexfire'
 import firebase, { usersRef } from '~src/plugins/firebase'
 
 export const state = () => ({
@@ -23,17 +24,20 @@ export const actions = {
     const provider = new firebase.auth.GoogleAuthProvider()
     firebase.auth().signInWithRedirect(provider)
   },
-  addAccount: async ({ commit }, { account }) => {
+  addAccount: firestoreAction(async ({ commit }, { account }) => {
     // eslint-disable-next-line no-console
     if (!account) return
     const index = account.email.replace('@', '_at_').replace(/\./g, '_dot_')
-    await usersRef.child(index).set({
+
+    // await usersRef.child(index).set({
+    await usersRef.doc(index).set({
       email: account.email,
       icon: account.photoURL,
       name: account.displayName
     })
+
     commit('setAccount', account)
-  },
+  }),
   initAccount: async ({ commit }, { account }) => {
     if (!account) return
     commit('setAccount', account)

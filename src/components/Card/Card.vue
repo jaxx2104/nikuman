@@ -109,7 +109,10 @@ export default {
       return user ? user.name : '*'
     },
     authored() {
-      const date = distanceInWordsToNow(this.post.date)
+      const unixtime = this.post.date.seconds
+        ? Number(`${this.post.date.seconds}000`)
+        : this.post.date
+      const date = distanceInWordsToNow(unixtime)
       return `Updated ${date} ago`
     }
   },
@@ -127,10 +130,14 @@ export default {
       setTimeout(() => (this.copyLgtmLabel = 'LGTM'), 1000)
     },
     thumbsUp() {
-      this.up({ id: this.post['.key'] })
+      // const id = this.post['.key']
+      const id = this.post.id
+      this.up({ id })
     },
     thumbsDown() {
-      this.down({ id: this.post['.key'] })
+      // const id = this.post['.key']
+      const id = this.post.id
+      this.down({ id })
     }
   }
 }
