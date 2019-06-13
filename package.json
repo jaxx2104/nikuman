@@ -41,7 +41,7 @@
     "eslint-loader": "2.1.2",
     "eslint-plugin-prettier": "3.1.0",
     "eslint-plugin-vue": "5.2.2",
-    "firebase": "^6.1.1",
+    "firebase": "6.1.1",
     "firebase-tools": "7.0.0",
     "husky": "2.4.1",
     "lint-staged": "8.2.0",
@@ -49,7 +49,7 @@
     "prettier": "1.18.2",
     "rimraf": "2.6.3",
     "vue-styled-components": "1.4.5",
-    "vuexfire": "^3.0.0"
+    "vuexfire": "3.0.0"
   },
   "husky": {
     "hooks": {
