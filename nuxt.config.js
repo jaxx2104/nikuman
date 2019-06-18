@@ -18,6 +18,7 @@ module.exports = {
     maxAge: 900000
   },
   env: {
+    APPID: process.env.APPID,
     APIKEY: process.env.APIKEY,
     AUTHDOMAIN: process.env.AUTHDOMAIN,
     DATABASEURL: process.env.DATABASEURL,
