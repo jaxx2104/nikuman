@@ -7224,10 +7224,10 @@ grpc@1.20.3:
     node-pre-gyp "^0.13.0"
     protobufjs "^5.0.3"
 
-grpc@1.22.1:
-  version "1.22.1"
-  resolved "https://registry.yarnpkg.com/grpc/-/grpc-1.22.1.tgz#3277de5cb120680b9c60957a798a336018f5f66d"
-  integrity sha512-iNFDTtG5/ySoCXFhx5IYr34Bfm968B08dWBHHd1D3STE+k/NXJmWzLidVyKBU2EYVX1jxheAD9lxMoLE+u4xKQ==
+grpc@1.22.2:
+  version "1.22.2"
+  resolved "https://registry.yarnpkg.com/grpc/-/grpc-1.22.2.tgz#1a60c728c692a93a85e855e35c2e0216654f0198"
+  integrity sha512-gaK59oAA5/mlOIn+hQO5JROPoAzsaGRpEMcrAayW5WGETS8QScpBoQ+XBxEWAAF0kbeGIELuGRCVEObKS1SLmw==
   dependencies:
     lodash.camelcase "^4.3.0"
     lodash.clone "^4.5.0"
