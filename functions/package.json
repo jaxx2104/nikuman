@@ -14,7 +14,7 @@
     "express": "4.17.1",
     "firebase": "6.3.1",
     "firebase-admin": "8.3.0",
-    "firebase-functions": "3.1.0",
+    "firebase-functions": "3.2.0",
     "lodash": "4.17.15",
     "nuxt": "2.8.1",
     "vue-styled-components": "1.4.5",
