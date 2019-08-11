@@ -41,15 +41,15 @@
     "eslint-loader": "2.2.1",
     "eslint-plugin-prettier": "3.1.0",
     "eslint-plugin-vue": "5.2.3",
-    "firebase": "6.3.4",
+    "firebase": "6.3.5",
     "firebase-tools": "7.2.2",
-    "husky": "3.0.2",
+    "husky": "3.0.3",
     "lint-staged": "9.2.1",
     "mkdirp": "0.5.1",
     "prettier": "1.18.2",
     "rimraf": "2.6.3",
-    "vue-styled-components": "1.4.6",
-    "vuexfire": "3.1.0"
+    "vue-styled-components": "1.4.9",
+    "vuexfire": "3.1.2"
   },
   "husky": {
     "hooks": {
