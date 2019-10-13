@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "3.3.0",
-    "@storybook/vue": "5.2.1",
+    "@storybook/vue": "5.2.3",
     "babel-eslint": "10.0.3",
     "babel-preset-vue": "2.0.2",
     "copy-to-clipboard": "3.2.0",
@@ -42,14 +42,14 @@
     "eslint-plugin-prettier": "3.1.1",
     "eslint-plugin-vue": "5.2.3",
     "firebase": "6.6.2",
-    "firebase-tools": "7.4.0",
-    "husky": "3.0.8",
-    "lint-staged": "9.4.1",
+    "firebase-tools": "7.5.0",
+    "husky": "3.0.9",
+    "lint-staged": "9.4.2",
     "mkdirp": "0.5.1",
     "prettier": "1.18.2",
     "rimraf": "2.7.1",
     "vue-styled-components": "1.4.13",
-    "vuexfire": "3.1.2"
+    "vuexfire": "3.2.0"
   },
   "husky": {
     "hooks": {
