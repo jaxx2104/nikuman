@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "3.0.0-beta.16",
-    "grpc": "1.24.1",
+    "grpc": "1.24.2",
     "nuxt": "2.10.2"
   },
   "devDependencies": {
