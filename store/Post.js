@@ -1,4 +1,4 @@
-import { database } from 'firebase'
+import firebase from '~/plugins/firebase'
 import { firebaseAction } from 'vuexfire'
 import { postsRef } from '~/plugins/firebase'
 import assignWith from 'lodash/assignWith'
@@ -33,7 +33,7 @@ export default {
       if (body.trim() === '') return
       postsRef.push({
         body,
-        date: database.ServerValue.TIMESTAMP,
+        date: firebase.database.ServerValue.TIMESTAMP,
         from: email,
         thumbsdown: 0,
         thumbsup: 0

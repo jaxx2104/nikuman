@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   /*
   ** Build configuration
@@ -15,8 +17,7 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    },
-    vendor: ['firebase', 'vuexfire']
+    }
   },
   cache: {
     max: 1000,
