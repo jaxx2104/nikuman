@@ -1,5 +1,6 @@
 import { firestoreAction } from 'vuexfire'
-import firebase, { postsRef } from '~src/plugins/firebase'
+
+import firebase, { postsRef } from '../plugins/firebase'
 
 export const state = () => ({
   body: '',

@@ -1,6 +1,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import styled from 'vue-styled-components'
-import Button from '~src/components/Button'
+
+import Button from '../Button'
 
 const Icon = styled.img`
   border-radius: 50%;

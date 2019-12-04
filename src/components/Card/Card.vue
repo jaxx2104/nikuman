@@ -23,11 +23,11 @@
 </template>
 
 <script>
-import { distanceInWordsToNow } from 'date-fns'
+import { formatDistanceToNow } from 'date-fns'
 import { mapGetters, mapActions } from 'vuex'
 import copyToClipboard from 'copy-to-clipboard'
 import styled from 'vue-styled-components'
-import Button from '~src/components/Button'
+import Button from '../Button'
 
 const StyledCard = styled.div`
   background-clip: content-box;
@@ -112,7 +112,7 @@ export default {
       const unixtime = this.post.date.seconds
         ? Number(`${this.post.date.seconds}000`)
         : this.post.date
-      const date = distanceInWordsToNow(unixtime)
+      const date = formatDistanceToNow(new Date(unixtime))
       return `Updated ${date} ago`
     }
   },

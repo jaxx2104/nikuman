@@ -1,47 +1,22 @@
-require('dotenv').config()
-const path = require('path')
+export default {
+  mode: 'spa',
 
-module.exports = {
-  /*
-   ** Build configuration
-   */
-  build: {
-    /*
-     ** Run ESLint on save
-     */
-    extend(config) {
-      config.resolve.alias['~src'] = path.resolve(__dirname, 'src')
-    }
-  },
-  cache: {
-    max: 1000,
-    maxAge: 900000
-  },
-  env: {
-    APPID: process.env.APPID,
-    APIKEY: process.env.APIKEY,
-    AUTHDOMAIN: process.env.AUTHDOMAIN,
-    DATABASEURL: process.env.DATABASEURL,
-    PROJECTID: process.env.PROJECTID,
-    STORAGEBUCKET: process.env.STORAGEBUCKET,
-    MESSAGINGSENDERID: process.env.MESSAGINGSENDERID
-  },
   /*
    ** Headers of the page
    */
   head: {
-    title: 'Nikuman',
+    title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: 'Nuxt.js + Firebase + Netlify project'
+        content: process.env.npm_package_description || ''
       },
       {
         property: 'og:description',
-        content: 'Nuxt.js + Firebase + Netlify project'
+        content: process.env.npm_package_description || ''
       },
       {
         property: 'og:image',
@@ -75,16 +50,16 @@ module.exports = {
     ]
   },
   /*
-   ** Customize the progress bar color
+   ** Customize the progress-bar color
    */
-  loading: { color: 'white' },
+  loading: { color: 'rebeccapurple' },
   loadingIndicator: {
     name: 'circle',
     color: 'rebeccapurple',
     background: 'white'
   },
   manifest: {
-    name: 'Nikuman',
+    name: process.env.npm_package_name || '',
     lang: 'ja',
     theme_color: 'rebeccapurple',
     icons: [
@@ -100,15 +75,44 @@ module.exports = {
       }
     ]
   },
-  modules: ['@nuxtjs/pwa'],
-  render: {
-    static: {
-      maxAge: '1y',
-      setHeaders(res, path) {
-        if (path.includes('sw.js')) {
-          res.setHeader('Cache-Control', 'public, max-age=0')
-        }
-      }
+  /*
+   ** Global CSS
+   */
+  css: [],
+  /*
+   ** Plugins to load before mounting the App
+   */
+  plugins: [],
+  /*
+   ** Nuxt.js dev-modules
+   */
+  buildModules: [
+    // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/eslint-module',
+    // Doc: https://github.com/nuxt-community/dotenv-module
+    ['@nuxtjs/dotenv', { path: './' }]
+  ],
+  /*
+   ** Nuxt.js modules
+   */
+  modules: [
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios'
+  ],
+  /*
+   ** Axios module configuration
+   ** See https://axios.nuxtjs.org/options
+   */
+  axios: {},
+  /*
+   ** Build configuration
+   */
+  build: {
+    /*
+     ** Run ESLint on save
+     */
+    extend(config, { isDev, isClient }) {
+      // config.devtool = 'eval-source-map'
     }
   },
   srcDir: 'src'
