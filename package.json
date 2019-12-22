@@ -26,7 +26,7 @@
   "dependencies": {
     "@nuxtjs/pwa": "3.0.0-beta.16",
     "grpc": "1.24.2",
-    "nuxt": "2.10.2"
+    "nuxt": "2.11.0"
   },
   "devDependencies": {
     "@google-cloud/nodejs-repo-tools": "3.3.0",
