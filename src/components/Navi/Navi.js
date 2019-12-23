@@ -1,5 +1,5 @@
 import styled from 'vue-styled-components'
-import Auth from '~src/components/Auth'
+import Auth from '../Auth'
 
 const Header = styled.header`
   align-items: center;

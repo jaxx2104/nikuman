@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as firebase from 'firebase/app'
 import 'firebase/auth'
 // import 'firebase/database'
@@ -7,19 +8,20 @@ if (process.client) {
 }
 
 const config = {
-  apiKey: process.env.APIKEY,
-  authDomain: process.env.AUTHDOMAIN,
-  databaseURL: process.env.DATABASEURL,
-  projectId: process.env.PROJECTID,
-  storageBucket: process.env.STORAGEBUCKET,
-  messagingSenderId: process.env.MESSAGINGSENDERID,
-  appId: process.env.APPID
+  apiKey: 'AIzaSyBJCf0Z90kyE2KaeU65Pa0vIcUxSdMjd_Q',
+  authDomain: 'nikuman-46d52.firebaseapp.com',
+  databaseURL: 'https://nikuman-46d52.firebaseio.com',
+  projectId: 'nikuman-46d52',
+  storageBucket: 'nikuman-46d52.appspot.com',
+  messagingSenderId: '135609400101',
+  appId: '1:135609400101:web:c3ea916a079d81d7'
 }
 
 if (!firebase.apps.length) {
   firebase.initializeApp(config)
 }
 
+// eslint-disable-next-line import/no-mutable-exports
 export let perf = () => {}
 if (process.client) {
   perf = firebase.performance()

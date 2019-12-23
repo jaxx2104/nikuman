@@ -1,5 +1,5 @@
 import { firestoreAction } from 'vuexfire'
-import firebase, { usersRef } from '~src/plugins/firebase'
+import firebase, { usersRef } from '../plugins/firebase'
 
 export const state = () => ({
   email: null,
@@ -38,7 +38,7 @@ export const actions = {
 
     commit('setAccount', account)
   }),
-  initAccount: async ({ commit }, { account }) => {
+  initAccount: ({ commit }, { account }) => {
     if (!account) return
     commit('setAccount', account)
   }

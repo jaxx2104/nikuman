@@ -13,11 +13,11 @@
 import { mapGetters } from 'vuex'
 import styled from 'vue-styled-components'
 
-import auth from '~src/plugins/auth'
-import Card from '~src/components/Card'
-import InputText from '~src/components/InputText'
-import Loading from '~src/components/Loading'
-import Navi from '~src/components/Navi'
+import auth from '../plugins/auth'
+import Card from '../components/Card'
+import InputText from '../components/InputText'
+import Loading from '../components/Loading'
+import Navi from '../components/Navi'
 
 const CardColumns = styled.div`
   column-count: 4;
