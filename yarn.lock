@@ -1304,10 +1304,10 @@
     mustache "^2.3.0"
     stack-trace "0.0.10"
 
-"@posva/vuefire-core@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@posva/vuefire-core/-/vuefire-core-2.2.0.tgz#0b934e9f85822529d44b8dfd5061ef53c4b2d80f"
-  integrity sha512-A5fPZCL8P+0DcS5qEY3liaLzOCdDPpdGoW050VzxNueJZDHi1eLfzAEFi5ctxH5wx7r4erwX4MGekX3K5t2b9A==
+"@posva/vuefire-core@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@posva/vuefire-core/-/vuefire-core-2.3.0.tgz#23b82c9e9948619ff9508e28857d97c84580b568"
+  integrity sha512-QXYYjcekmlKgWtrjla3z6FjcAFgzZD2wrHukz40V3c80gbVSBoDjM/oSvrHCwxzhvTg95abkHgE2yEL0UlHJCQ==
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
   version "1.1.2"
@@ -9309,12 +9309,12 @@ vuex@^3.1.2:
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.1.2.tgz#a2863f4005aa73f2587e55c3fadf3f01f69c7d4d"
   integrity sha512-ha3jNLJqNhhrAemDXcmMJMKf1Zu4sybMPr9KxJIuOpVcsDQlTBYLLladav2U+g1AvdYDG5Gs0xBTb0M5pXXYFQ==
 
-vuexfire@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/vuexfire/-/vuexfire-3.2.0.tgz#a168cf4c132e15ab5db9abcdf577011f1408a66e"
-  integrity sha512-eLrQFazM5nGtaFla37dTJrHNbdrr35dwImepM+uquh5YVJuYpRYkcoJO1mDi+adqYh0RJUReNVlb5SOX/VDB4w==
+vuexfire@3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/vuexfire/-/vuexfire-3.2.1.tgz#24037b3c2b18a79e7783197f8a7f003f46b33a7b"
+  integrity sha512-I81b4qFA/Ut5uI9vbyD7Ecz1CbvcRaAq/b1l7qbeuOVqvTg4WaRJ7dTynHIm4voE3D7GfO6HMnox7Tw71ad3EA==
   dependencies:
-    "@posva/vuefire-core" "^2.2.0"
+    "@posva/vuefire-core" "^2.3.0"
 
 watchpack@^1.6.0:
   version "1.6.0"
