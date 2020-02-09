@@ -26,7 +26,7 @@
     "copy-to-clipboard": "3.2.1",
     "core-js": "2.6.11",
     "date-fns": "2.9.0",
-    "firebase": "7.8.0",
+    "firebase": "7.8.1",
     "nuxt": "2.11.0",
     "vue-styled-components": "1.4.14",
     "vuexfire": "3.2.1"
