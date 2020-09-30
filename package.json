@@ -27,7 +27,7 @@
     "core-js": "2.6.11",
     "date-fns": "2.16.1",
     "firebase": "7.21.1",
-    "nuxt": "2.13.2",
+    "nuxt": "2.14.6",
     "vue-styled-components": "1.5.1",
     "vuexfire": "3.2.2"
   },
