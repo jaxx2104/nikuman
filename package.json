@@ -28,7 +28,7 @@
     "date-fns": "2.16.1",
     "firebase": "7.24.0",
     "nuxt": "2.14.7",
-    "vue-styled-components": "1.5.1",
+    "vue-styled-components": "1.6.0",
     "vuexfire": "3.2.4"
   },
   "devDependencies": {
