@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "5.13.6",
-    "@nuxtjs/dotenv": "1.4.1",
+    "@nuxtjs/dotenv": "1.4.2",
     "@nuxtjs/pwa": "3.3.2",
     "copy-to-clipboard": "3.3.3",
     "core-js": "2.6.12",
