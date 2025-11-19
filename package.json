@@ -24,7 +24,7 @@
     "@nuxtjs/dotenv": "1.4.1",
     "@nuxtjs/pwa": "3.3.2",
     "copy-to-clipboard": "3.3.3",
-    "core-js": "2.6.12",
+    "core-js": "3.47.0",
     "date-fns": "2.30.0",
     "firebase": "7.24.0",
     "nuxt": "2.14.12",
